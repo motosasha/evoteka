@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html class="no-js no-scroll" lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=3, minimum-scale=0.1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="date=no">
+  <meta name="format-detection" content="address=no">
+  <meta name="format-detection" content="email=no">
+  <meta name="google" content="notranslate">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="robots" content="index, follow">
+  <link rel="preload" href="/fonts/Onest-Light.woff" as="font" type="font/woff" crossorigin="anonymous">
+  <link rel="preload" href="/fonts/Onest-Regular.woff" as="font" type="font/woff" crossorigin="anonymous">
+  <link rel="preload" href="/fonts/Onest-Medium.woff" as="font" type="font/woff" crossorigin="anonymous">
+  <link rel="preload" href="/fonts/Onest-Bold.woff" as="font" type="font/woff" crossorigin="anonymous">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#5bbad5">
+  <meta name="theme-color" content="#000">
+  <meta name="msapplication-navbutton-color" content="#000">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#000">
+  <title>Эвотека | Ваш надежный IT-партнер</title>
+  <meta name="description" content="description">
+  <meta name="keywords" content="keywords">
+  <link rel="stylesheet" href="/css/style.css"><script>// Убрать на html класс "no-js", добавить класс "js": с уровня стилей знаем работает ли JS
+document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+
+// Браузер и ОС
+function cth(c){document.documentElement.classList.add(c)}
+'ontouchstart' in window?cth('touch'):cth('no-touch');
+if(typeof InstallTrigger!=='undefined')cth('firefox');
+if(/constructor/i.test(window.HTMLElement)||(function(p){return p.toString()==="[object SafariRemoteNotification]"})(!window['safari']||(typeof safari!=='undefined'&&safari.pushNotification)))cth('safari');
+if(/*@cc_on!@*/!!document.documentMode)cth('ie');
+if(!(!!document.documentMode)&&!!window.StyleMedia)cth('edge');
+if(!!window.chrome&&(!!window.chrome.webstore||!!window.chrome.runtime))cth('chrome');
+if(~navigator.appVersion.indexOf("Win"))cth('windows');
+if(~navigator.appVersion.indexOf("Mac"))cth('osx');
+if(~['iPad','iPhone','iPod'].indexOf(navigator.platform))cth('ios');
+if(~navigator.appVersion.indexOf("Linux"))cth('linux');
+
+// Добавление 1vh (использование: height: 100vh; height: calc(var(--vh, 1vh) * 100);) для фикса 100vh на мобилках
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+window.addEventListener('resize', () => {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
+</script>
+</head>
+
+<body><noscript>У вас отключен JavaScript. Это пугает.</noscript>
+  <div class="page"><a class="page__button button" href="https://evoteka.ru/wp-content/themes/echolot/OOO_Evoteka.pdf" download><img class="button__icon" src="/img/icon__download.svg" alt="download">
+      <div class="button__title">Карта партнёра</div>
+    </a>
+    <div class="page__nav">
+      <nav class="nav">
+        <div class="nav__inner">
+          <nav class="nav__links"><a class="nav__link" href="#services">Услуги</a><a class="nav__link" href="#calculator">Калькулятор</a><a class="nav__link" href="./cases.html">Кейсы</a><a class="nav__link" href="./blog.html">Блог</a><a class="nav__link" href="./contacts.html">Контакты</a></nav><a class="nav__button button" href="https://evoteka.ru/wp-content/themes/echolot/OOO_Evoteka.pdf" download="download"><img class="button__icon" src="/img/icon__download.svg" alt="download" />
+            <div class="button__title">Карта партнёра</div>
+          </a>
+        </div>
+      </nav>
+    </div>
+    <div class="page__header">
+      <header class="header">
+        <div class="header__inner">
+          <div class="header__logo"><svg class="logo">
+              <use href="/img/svgSprite.svg#logo__evoteka"></use>
+            </svg></div>
+          <nav class="header__nav"><a class="header__nav-item link" href="#services">Услуги</a><a class="header__nav-item link" href="#calculator">Калькулятор</a><a class="header__nav-item link" href="./cases.html">Кейсы</a><a class="header__nav-item link" href="./blog.html">Блог</a><a class="header__nav-item link" href="./contacts.html">Контакты</a></nav><button class="header__menu"><svg class="burger" width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <path class="burger__line burger__line--top" d="M7 8H23C23 8 26 8 26 11C26 14 23 14 23 14H5"></path>
+              <path class="burger__line burger__line--middle" d="M5 14H23"></path>
+              <path class="burger__line burger__line--bottom" d="M19 20H5C5 20 2 20 2 17C2 14 5 14 5 14H23"></path>
+            </svg></button>
+        </div>
+      </header>
+    </div>
+    <div class="page__main">
+      <section class="hero">
+        <div class="hero__inner"><svg class="hero__logo" width="380" height="80" viewBox="0 0 380 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="hero__logo-solid" d="M31.5297 64.3C33.5297 64.3 35.2297 64 36.6297 63.4C38.0964 62.7333 39.2964 61.6667 40.2297 60.2H55.0297C54.2964 62.9333 53.163 65.3 51.6297 67.3C50.163 69.3 48.363 70.9333 46.2297 72.2C44.163 73.4667 41.863 74.4 39.3297 75C36.7964 75.5333 34.1297 75.8 31.3297 75.8C22.7964 75.8 16.3297 73.4 11.9297 68.6C7.59635 63.8 5.42969 57.0667 5.42969 48.4C5.42969 44.4667 5.99635 40.8333 7.12969 37.5C8.32969 34.1667 9.99635 31.3 12.1297 28.9C14.263 26.4333 16.8964 24.5333 20.0297 23.2C23.2297 21.8667 26.863 21.2 30.9297 21.2C35.663 21.2 39.763 22.0333 43.2297 23.7C46.6964 25.3667 49.4297 27.6667 51.4297 30.6C53.4964 33.4667 54.863 36.8333 55.5297 40.7C56.263 44.5667 56.263 48.7 55.5297 53.1H19.5297C19.7964 56.2333 20.8964 58.9 22.8297 61.1C24.763 63.2333 27.663 64.3 31.5297 64.3ZM42.4297 43.4C42.4297 41.7333 42.1297 40.2667 41.5297 39C40.9297 37.6667 40.1297 36.6 39.1297 35.8C38.1297 34.9333 36.9297 34.3 35.5297 33.9C34.1964 33.5 32.7964 33.3 31.3297 33.3C27.7964 33.3667 25.0297 34.3333 23.0297 36.2C21.0964 38 19.963 40.4 19.6297 43.4H42.4297ZM97.5445 22.3H113.045L93.6445 75H75.9445L56.6445 22.3H72.2445L84.9445 61.4L97.5445 22.3ZM140.19 75.8C131.657 75.8 125.09 73.4 120.49 68.6C115.89 63.7333 113.59 57 113.59 48.4C113.59 44.2667 114.19 40.5333 115.39 37.2C116.657 33.8 118.39 30.9 120.59 28.5C122.857 26.1 125.623 24.3 128.89 23.1C132.223 21.8333 135.99 21.2 140.19 21.2C144.323 21.2 148.023 21.8333 151.29 23.1C154.623 24.3 157.423 26.1 159.69 28.5C162.023 30.9 163.79 33.8 164.99 37.2C166.257 40.5333 166.89 44.2667 166.89 48.4C166.89 57.0667 164.557 63.8 159.89 68.6C155.29 73.4 148.723 75.8 140.19 75.8ZM140.19 33.8C135.857 33.8 132.657 35.2 130.59 38C128.523 40.8 127.49 44.3 127.49 48.5C127.49 52.7667 128.523 56.3 130.59 59.1C132.657 61.9 135.857 63.3 140.19 63.3C144.523 63.3 147.69 61.9 149.69 59.1C151.69 56.3 152.69 52.7667 152.69 48.5C152.69 44.3 151.69 40.8 149.69 38C147.69 35.2 144.523 33.8 140.19 33.8ZM198.844 63.2C199.91 63.2 201.11 63 202.444 62.6C203.777 62.2 204.944 61.7 205.944 61.1L209.944 71.8C209.01 72.4 207.944 72.9667 206.744 73.5C205.61 73.9667 204.344 74.4 202.944 74.8C201.61 75.1333 200.344 75.3667 199.144 75.5C197.944 75.6333 196.844 75.7 195.844 75.7C192.644 75.7 189.81 75.2667 187.344 74.4C184.944 73.5333 182.944 72.2333 181.344 70.5C179.877 69.0333 178.777 67.1333 178.044 64.8C177.377 62.4667 177.044 59.8333 177.044 56.9V34.6H169.044V22.3H177.044V7.9H191.144V22.3H206.644V34.6H191.144V53.6C191.144 54.8 191.21 55.9667 191.344 57.1C191.544 58.1667 191.91 59.1667 192.444 60.1C193.044 61.0333 193.844 61.8 194.844 62.4C195.91 62.9333 197.244 63.2 198.844 63.2ZM236.815 64.3C238.815 64.3 240.515 64 241.915 63.4C243.382 62.7333 244.582 61.6667 245.515 60.2H260.315C259.582 62.9333 258.448 65.3 256.915 67.3C255.448 69.3 253.648 70.9333 251.515 72.2C249.448 73.4667 247.148 74.4 244.615 75C242.082 75.5333 239.415 75.8 236.615 75.8C228.082 75.8 221.615 73.4 217.215 68.6C212.882 63.8 210.715 57.0667 210.715 48.4C210.715 44.4667 211.282 40.8333 212.415 37.5C213.615 34.1667 215.282 31.3 217.415 28.9C219.548 26.4333 222.182 24.5333 225.315 23.2C228.515 21.8667 232.148 21.2 236.215 21.2C240.948 21.2 245.048 22.0333 248.515 23.7C251.982 25.3667 254.715 27.6667 256.715 30.6C258.782 33.4667 260.148 36.8333 260.815 40.7C261.548 44.5667 261.548 48.7 260.815 53.1H224.815C225.082 56.2333 226.182 58.9 228.115 61.1C230.048 63.2333 232.948 64.3 236.815 64.3ZM247.715 43.4C247.715 41.7333 247.415 40.2667 246.815 39C246.215 37.6667 245.415 36.6 244.415 35.8C243.415 34.9333 242.215 34.3 240.815 33.9C239.482 33.5 238.082 33.3 236.615 33.3C233.082 33.3667 230.315 34.3333 228.315 36.2C226.382 38 225.248 40.4 224.915 43.4H247.715ZM281.63 54.9V75H267.53V4.2H281.63V42.7H288.63L300.03 22.3H316.13L300.53 47.3L317.33 75H300.93L289.13 54.9H281.63ZM358.401 70.1C356.134 72.3 353.667 73.8 351.001 74.6C348.334 75.4 345.567 75.8 342.701 75.8C338.967 75.8 335.567 75.2333 332.501 74.1C329.501 72.9667 326.934 71.3 324.801 69.1C322.267 66.5 320.467 63.4333 319.401 59.9C318.334 56.3667 317.801 52.7667 317.801 49.1C317.801 40.5 320.067 33.7667 324.601 28.9C326.934 26.3 329.767 24.3667 333.101 23.1C336.434 21.8333 339.934 21.2 343.601 21.2C347.601 21.2 350.834 21.7667 353.301 22.9C355.834 24.0333 357.734 25.3667 359.001 26.9L359.801 22.3H372.601V75H359.101L358.401 70.1ZM345.301 63.3C347.367 63.3 349.201 62.9333 350.801 62.2C352.467 61.4 353.834 60.3333 354.901 59C356.034 57.6667 356.867 56.1333 357.401 54.4C358.001 52.6667 358.301 50.7667 358.301 48.7C358.301 44.3 357.134 40.7333 354.801 38C352.534 35.2667 349.334 33.8667 345.201 33.8C343.001 33.8 341.034 34.1667 339.301 34.9C337.634 35.6333 336.234 36.7 335.101 38.1C334.034 39.4333 333.234 41 332.701 42.8C332.167 44.5333 331.901 46.4333 331.901 48.5C331.901 50.7 332.167 52.7 332.701 54.5C333.301 56.2333 334.167 57.7667 335.301 59.1C336.434 60.4333 337.834 61.4667 339.501 62.2C341.167 62.9333 343.101 63.3 345.301 63.3Z" fill="url(#paint0_radial_427_12271)" fill-opacity="0.1"></path>
+            <g class="hero__logo-outline">
+              <path d="M20.0832 53.6H55.5297H55.9533L56.0229 53.1822C56.7644 48.7333 56.7666 44.5415 56.0217 40.611C55.3437 36.6819 53.952 33.2455 51.8391 30.3129C49.7858 27.3035 46.9832 24.9498 43.4463 23.2494C39.8983 21.5436 35.7211 20.7 30.9297 20.7C26.8083 20.7 23.1079 21.3758 19.8374 22.7385L19.8374 22.7385L19.8339 22.7399C16.6347 24.1013 13.9388 26.0447 11.7537 28.5704C9.57499 31.0221 7.87817 33.9447 6.65924 37.3307L6.65917 37.3306L6.6563 37.3391C5.50341 40.7299 4.92969 44.4183 4.92969 48.4C4.92969 57.1477 7.11749 64.0157 11.5585 68.9351L11.5611 68.9379C16.0829 73.8708 22.7021 76.3 31.3297 76.3C34.1615 76.3 36.8629 76.0303 39.4327 75.4893L39.4327 75.4894L39.4449 75.4866C42.0248 74.8755 44.3736 73.9236 46.4879 72.6282C48.6762 71.3284 50.5245 69.6514 52.0297 67.6C53.6059 65.5429 54.7649 63.1166 55.5126 60.3296L55.6815 59.7H55.0297H40.2297H39.9552L39.8079 59.9316C38.9233 61.3216 37.7969 62.3191 36.4277 62.9426C35.107 63.5076 33.4797 63.8 31.5297 63.8C27.7553 63.8 25.012 62.7616 23.2028 60.7672C21.4585 58.7812 20.4166 56.3981 20.0832 53.6ZM41.0737 39.2052L41.0736 39.2052L41.0778 39.2141C41.5815 40.2773 41.8658 41.503 41.9201 42.9H20.1988C20.5928 40.263 21.6557 38.1624 23.3704 36.566L23.3708 36.5655C25.256 34.8061 27.8897 33.8658 31.3344 33.8C32.7533 33.8004 34.1032 33.9941 35.386 34.3789L35.386 34.379L35.3923 34.3808C36.7293 34.7628 37.8627 35.3636 38.8022 36.1779L38.8097 36.1843L38.8173 36.1904C39.7472 36.9343 40.5016 37.9338 41.0737 39.2052Z" vector-effect="non-scaling-stroke" stroke-width="1px" stroke="#060708"></path>
+              <path d="M97.5445 21.8H97.1803L97.0686 22.1467L84.9427 59.7757L72.7201 22.1456L72.6078 21.8H72.2445H56.6445H55.9289L56.175 22.472L75.475 75.172L75.5952 75.5H75.9445H93.6445H93.9933L94.1137 75.1728L113.514 22.4727L113.761 21.8H113.045H97.5445Z" vector-effect="non-scaling-stroke" stroke-width="1px" stroke="#060708"></path>
+              <path d="M120.126 68.9435L120.129 68.946C124.848 73.8703 131.561 76.3 140.19 76.3C148.818 76.3 155.53 73.8708 160.249 68.9474C165.031 64.029 167.39 57.1563 167.39 48.4C167.39 44.2178 166.749 40.4249 165.459 37.028C164.238 33.5688 162.436 30.608 160.051 28.1541C157.728 25.6956 154.863 23.8558 151.465 22.6316C148.133 21.3405 144.372 20.7 140.19 20.7C135.941 20.7 132.113 21.3406 128.715 22.6316C125.381 23.8568 122.548 25.6981 120.226 28.1567L120.226 28.1567L120.221 28.1622C117.973 30.6148 116.208 33.572 114.921 37.0255L114.921 37.0255L114.919 37.0307C113.697 40.4265 113.09 44.2184 113.09 48.4C113.09 57.0901 115.416 63.9598 120.126 68.9435ZM130.992 38.2969C132.941 35.6559 135.972 34.3 140.19 34.3C144.408 34.3 147.401 35.6559 149.283 38.2906C151.21 40.9886 152.19 44.3808 152.19 48.5C152.19 52.6878 151.209 56.1127 149.283 58.8094C147.401 61.4441 144.408 62.8 140.19 62.8C135.972 62.8 132.941 61.4441 130.992 58.8031C129.002 56.107 127.99 52.6844 127.99 48.5C127.99 44.3842 129.001 40.9944 130.992 38.2969Z" vector-effect="non-scaling-stroke" stroke-width="1px" stroke="#060708"></path>
+              <path d="M206.412 60.9249L206.202 60.3622L205.687 60.6713C204.728 61.2463 203.601 61.7308 202.3 62.1211C201 62.5111 199.85 62.7 198.844 62.7C197.305 62.7 196.06 62.4447 195.085 61.9613C194.159 61.4027 193.424 60.6959 192.872 59.8406C192.372 58.9642 192.028 58.0263 191.839 57.0245C191.709 55.9169 191.644 54.7754 191.644 53.6V35.1H206.644H207.144V34.6V22.3V21.8H206.644H191.644V7.90002V7.40002H191.144H177.044H176.544V7.90002V21.8H169.044H168.544V22.3V34.6V35.1H169.044H176.544V56.9C176.544 59.8705 176.881 62.5512 177.563 64.9374L177.563 64.9374L177.567 64.9499C178.319 67.3427 179.454 69.3145 180.983 70.8465C182.641 72.6398 184.708 73.9799 187.174 74.8703L187.178 74.8718C189.709 75.7608 192.6 76.2 195.844 76.2C196.866 76.2 197.984 76.1319 199.199 75.997C200.424 75.8609 201.713 75.6231 203.065 75.2851L203.073 75.2831L203.081 75.2808C204.496 74.8766 205.781 74.4373 206.934 73.9624L206.934 73.9625L206.947 73.9569C208.166 73.4151 209.256 72.8366 210.214 72.2206L210.553 72.0026L210.412 71.6249L206.412 60.9249Z" vector-effect="non-scaling-stroke" stroke-width="1px" stroke="#060708"></path>
+              <path d="M225.368 53.6H260.815H261.238L261.308 53.1822C262.05 48.7333 262.052 44.5415 261.307 40.611C260.629 36.6819 259.237 33.2455 257.124 30.3129C255.071 27.3035 252.268 24.9498 248.731 23.2494C245.183 21.5436 241.006 20.7 236.215 20.7C232.093 20.7 228.393 21.3758 225.123 22.7385L225.123 22.7385L225.119 22.7399C221.92 24.1013 219.224 26.0447 217.039 28.5704C214.86 31.0221 213.163 33.9447 211.944 37.3307L211.944 37.3306L211.941 37.3391C210.789 40.7299 210.215 44.4183 210.215 48.4C210.215 57.1477 212.403 64.0157 216.844 68.9351L216.846 68.9379C221.368 73.8708 227.987 76.3 236.615 76.3C239.447 76.3 242.148 76.0303 244.718 75.4893L244.718 75.4894L244.73 75.4866C247.31 74.8755 249.659 73.9236 251.773 72.6282C253.961 71.3283 255.81 69.6514 257.315 67.6C258.891 65.5429 260.05 63.1166 260.798 60.3296L260.967 59.7H260.315H245.515H245.24L245.093 59.9316C244.208 61.3216 243.082 62.3191 241.713 62.9426C240.392 63.5076 238.765 63.8 236.815 63.8C233.04 63.8 230.297 62.7616 228.488 60.7672C226.744 58.7812 225.702 56.3981 225.368 53.6ZM246.359 39.2052L246.359 39.2052L246.363 39.2141C246.867 40.2773 247.151 41.503 247.205 42.9H225.484C225.878 40.263 226.941 38.1624 228.656 36.566L228.656 36.5655C230.541 34.8061 233.175 33.8658 236.62 33.8C238.038 33.8004 239.388 33.9941 240.671 34.3789L240.671 34.379L240.677 34.3808C242.014 34.7628 243.148 35.3636 244.087 36.1779L244.095 36.1843L244.102 36.1904C245.032 36.9343 245.787 37.9338 246.359 39.2052Z" vector-effect="non-scaling-stroke" stroke-width="1px" stroke="#060708"></path>
+              <path d="M282.13 42.2V4.20001V3.70001H281.63H267.53H267.03V4.20001V75V75.5H267.53H281.63H282.13V75V55.4H288.844L300.499 75.2532L300.644 75.5H300.93H317.33H318.218L317.757 74.7407L301.117 47.3037L316.554 22.5647L317.031 21.8H316.13H300.03H299.736L299.593 22.0561L288.336 42.2H282.13Z" vector-effect="non-scaling-stroke" stroke-width="1px" stroke="#060708"></path>
+              <path d="M332.324 74.5678L332.327 74.569C335.457 75.7255 338.917 76.3 342.701 76.3C345.615 76.3 348.43 75.8933 351.144 75.0789C353.62 74.3363 355.919 73.0117 358.041 71.1179L358.606 75.0707L358.667 75.5H359.101H372.601H373.101V75V22.3V21.8H372.601H359.801H359.38L359.308 22.2143L358.683 25.8108C357.395 24.5278 355.663 23.4091 353.507 22.4447C350.952 21.2711 347.64 20.7 343.601 20.7C339.875 20.7 336.315 21.3438 332.923 22.6326L333.101 23.1L332.923 22.6326C329.518 23.9264 326.619 25.9037 324.232 28.5626C319.591 33.5462 317.301 40.4138 317.301 49.1C317.301 52.816 317.841 56.4646 318.922 60.0445C320.012 63.6533 321.852 66.7905 324.443 69.449C326.629 71.7038 329.259 73.4098 332.324 74.5678ZM354.52 58.6762L354.515 58.6819L354.51 58.6877C353.495 59.9566 352.191 60.9773 350.589 61.7473C349.065 62.4447 347.306 62.8 345.301 62.8C343.156 62.8 341.294 62.4426 339.702 61.7424C338.102 61.0382 336.764 60.0495 335.682 58.7762C334.593 57.4951 333.758 56.0203 333.177 54.3471C332.662 52.6031 332.401 50.6555 332.401 48.5C332.401 46.4764 332.662 44.6266 333.179 42.9471L333.179 42.9471L333.18 42.9421C333.697 41.1984 334.468 39.6914 335.49 38.4136C336.572 37.0776 337.906 36.0605 339.499 35.3591C341.159 34.6572 343.056 34.3005 345.197 34.3C349.209 34.3656 352.259 35.7181 354.416 38.3192L354.416 38.3192L354.42 38.3246C356.66 40.9484 357.801 44.3913 357.801 48.7C357.801 50.718 357.508 52.5619 356.928 54.2365L356.925 54.2447L356.923 54.253C356.409 55.9238 355.608 57.3965 354.52 58.6762Z" vector-effect="non-scaling-stroke" stroke-width="1px" stroke="#060708"></path>
+            </g>
+            <defs>
+              <radialgradient id="paint0_radial_427_12271" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(190 74.9997) rotate(180) scale(177.822 3260.2)">
+                <stop stop-color="#840662">
+                  <animate attributename="stop-color" values="#840662; #EC2F4E; #840662" dur="4s" repeatcount="indefinite"></animate>
+                </stop>
+                <stop offset="0.5" stop-color="#EC2F4E">
+                  <animate attributename="stop-color" values="#EC2F4E; #ffffff; #EC2F4E" dur="4s" repeatcount="indefinite"></animate>
+                </stop>
+                <stop offset="1" stop-color="white">
+                  <animate attributename="stop-color" values="#ffffff; #840662; #ffffff" dur="4s" repeatcount="indefinite"></animate>
+                </stop>
+              </radialgradient>
+            </defs>
+            <div class="hero__text"><span class="hero__phrase hero__phrase--1">Ваш IT-партнёр полного цикла, с собственной продуктовой аналитикой, дизайном, веб- и мобильной разработкой</span><span class="hero__phrase hero__phrase--2">Говорим на языке бизнеса</span><span class="hero__phrase hero__phrase--3">Ориентируемся на пользователя</span><span class="hero__phrase hero__phrase--4">Предлагаем SLA с финансовой ответственностью</span></div><button class="hero__button button button--primary">Стать партнёром</button>
+          </svg></div>
+      </section><!-- .container.library
+  section.library__section
+    .library__anchor(id= library.section[0].href)
+    .hero
+      .hero__inner
+        h1.hero__title Gulp-сборщик
+        p.hero__descr с библиотекой компонентов
+        .hero__row
+          +button('link', 'Библиотека', 'primary, test', '', 'button-library', '#library')
+          +button('link', 'Инструменты', 'secondary', '', 'button-tools', '#tools')
+          +button('button', 'JS-test', 'secondary', 'button-name-js', 'button-js')(class='hero__js-trigger')
+  section.library__section
+    .library__anchor(id= library.section[1].href)
+    .library__inner
+      h2.library__title!= library.section[1].title
+      ul.library__list
+        +library-item(library.section[1].list[0], 'row')
+          .library__grid
+            .library__row
+              +button('input', 'I’m button', 'primary', 'button-name', 'exp-button')(class='hero__trigger')
+              +button('input', 'I’m disabled button', 'primary', 'button-name-2', 'exp-button-2')(disabled)
+            .library__row
+              +button('button', 'Я кнопка', 'secondary', 'button-name-3', 'exp-button-3')
+              +button('button', 'Я неактивная кнопка', 'secondary', 'button-name-4', 'exp-button-4')(disabled)
+        +library-item(library.section[1].list[1], 'row')
+          .library__inputs-list
+            +input('Введите текст', '', 'input-text-1', 'input-text-1')
+            +input('Введите текст', '', 'input-text-2', 'input-text-2', 'Д’Артаньян')
+            +input('Введите текст', '', 'input-text-2', 'input-text-2d', 'Д’Артаньян')(disabled)
+            +input-email('Введите почту', '', 'input-mail', 'input-mail', value)
+            +input-phone('Введите телефон', '', 'input-phone', 'input-phone', value)
+            +input-search('Поиск', '', 'input-search', 'input-search', value)
+            +input-password('Введите пароль', '', 'input-password', 'input-password', 'batman')
+            +input-number('0', '', 'input-number', 'number-id', 5, 10)
+            +input-file('some-mod', 'file-input', 'file-edu')
+            +input-file('some-mod', 'file-input-2', 'file-edu-2')(disabled)
+        +library-item(library.section[1].list[2], 'row')
+          .library__inputs-list
+            +textarea('Введите текст', '', 'textarea-text-1', 'textarea-text-1')
+            +textarea('Введите текст', '', 'textarea-text-2', 'textarea-text-2', 'Д’Артаньян')
+            +textarea('Введите текст', '', 'textarea-text-2', 'textarea-text-2d', 'Д’Артаньян')(disabled)
+        +library-item(library.section[1].list[3], 'row')
+          .library__inputs-list
+            +select(['Выберите опцию', 'Один', 'Два'], '', 'select-name', 'select-id')
+            +select(['Выберите опцию', 'Один', 'Два'], '', 'select-name-2', 'select-id-2')(disabled)
+        +library-item(library.section[1].list[4], 'row')
+          .library__inputs-list
+            +checkbox('Чекбокс', '', 'some-name', 'some-id-1')(required)
+            +checkbox('Неактивный чекбокс', '', 'some-name-2', 'some-id-2')(disabled)
+            +checkbox('Отмеченный чекбокс', '', 'some-name-3', 'some-id-3')(checked)
+            +checkbox('Отмеченный неактивный чекбокс', '', 'some-name-4', 'some-id-4')(checked, disabled)
+        +library-item(library.section[1].list[5], 'row')
+          .library__inputs-list
+            +radio('Радио-баттон', '', 'radio-name', 'some-id')(required)
+            +radio('Неактивный радио-баттон', '', 'radio-name-2', 'radio-id-2')(disabled)
+            +radio('Отмеченный радио-баттон', '', 'radio-name-3', 'radio-id-3')(checked)
+            +radio('Отмеченный неактивный радио-баттон', '', 'radio-name-4', 'radio-id-4')(checked, disabled)
+        +library-item(library.section[1].list[6], 'row')
+          .library__inputs-list
+            +field('text', 'Имя', 'Введите имя', '', 'field-id', 'field-name', 'Д’Артаньян')(required)
+        +library-item(library.section[1].list[7], 'row')
+          .library__inputs-list
+            +field-dp('text', 'Имя', '', 'field-dp-id', 'field-dp-name', '')(required)
+        +library-item(library.section[1].list[8], 'row')
+          form.form
+            .form__body
+              +field('text', 'Имя', 'Введите имя', '', 'name-field', 'name-field', 'Д’Артаньян')(required)
+              +field('email', 'Электропочта', 'Введите почту', '', 'mail-field', 'mail-field', 'gaskonets@musketeer.fr')(required)
+            .form__footer
+              +checkbox('Я согласен на обработку моих персональных данных', '', 'some-check', 'some-check')(required)
+              +button('submit', 'Отправить', 'primary', 'button-name-5', 'exp-button-5')(class='form__js-submit')
+        +library-item(library.section[1].list[9], 'row')
+          .tabs
+            .tabs__labels
+              .tabs__label.tabs__label--active(data-href='#tab1') Таб 1
+              .tabs__label(data-href='#tab2') Таб 2
+              .tabs__label(data-href='#tab3') Таб 3
+            .tabs__panes
+              .tabs__pane.tabs__pane--active#tab1 Содержимое, таб 1
+              .tabs__pane#tab2 Содержимое, таб 2
+              .tabs__pane#tab3 Содержимое, таб 3
+  section.library__section
+    .library__anchor(id= library.section[2].href)
+    .library__inner
+      h2.library__title!= library.section[2].title
+      ul.library__list
+        +library-item(library.section[2].list[0])
+          h4.library__fluid I'm a fluid heading
+        +library-item(library.section[2].list[1])
+          .library__data!= library.data
+        +library-item(library.section[2].list[2])
+          .library__tiles
+            .library__tile
+              .library__tile-descr Иконка из спрайта
+              svg.library__icon
+                use(href= src.icon + 'icon__default')
+            .library__tile.library__tile--icon-bg
+              .library__tile-descr Иконка из спрайта фоном
+        +library-item(library.section[2].list[3])
+          .library__tiles
+            .library__tile
+              .library__tile-descr Картинка
+              img.library__img(src= src.img + 'img__gulp.jpg', alt='Gulp logo')
+            .library__tile.library__tile--img-bg
+              .library__tile-descr Картинка фоном-->
+    </div>
+    <div class="page__footer">
+      <footer class="footer">
+        <div class="footer__inner">
+          <div class="footer__logo"><svg class="logo">
+              <use href="/img/svgSprite.svg#logo__evoteka"></use>
+            </svg></div>
+          <div class="footer__links">
+            <div class="footer__links-section">
+              <div class="footer__links-title">Компания</div>
+              <div class="footer__links-body"><a class="footer__link link" href="#">О нас</a><a class="footer__link link" href="https://kazan.hh.ru/employer/5601574?hhtmFrom=vacancy">Вакансии</a><a class="footer__link link" href="#">Контактная информация</a></div>
+            </div>
+            <div class="footer__links-section">
+              <div class="footer__links-title">Услуги</div>
+              <div class="footer__links-body"><a class="footer__link link" href="#">Сайты и веб-сервисы</a><a class="footer__link link" href="#">Мобильная разработка</a><a class="footer__link link" href="#">Маркетинговый калькулятор</a></div>
+            </div>
+            <div class="footer__links-section">
+              <div class="footer__links-title">Практика</div>
+              <div class="footer__links-body"><a class="footer__link link" href="cases.html">Кейсы</a><a class="footer__link link" href="blog.html">Блог и новости</a><a class="footer__link link" href="#">Телеграм канал</a></div>
+            </div>
+          </div>
+          <div class="footer__info">Ваш IT-партнер полного цикла, с собственной продуктовой аналитикой, дизайном, веб-и мобильной разработкой</div>
+          <div class="footer__contacts">
+            <address class="footer__contacts-item"><span class="footer__contacts-title">Офис продаж:</span> Респ. Татарстан, г. Казань, ул. Спартаковская 2, <nobr>«IT-Park Имени Башира Рамеева»</nobr>, 2 этаж, оф. 210</address>
+            <div class="footer__contacts-item"><span class="footer__contacts-title">ИНН:</span> 1658201149</div>
+          </div>
+          <div class="footer__copy">2023 © ООО «Эвотека». Все права защищены</div>
+        </div>
+      </footer>
+    </div>
+  </div><script src="/js/bundle.js"></script>
+</body>
+
+</html>
