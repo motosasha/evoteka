@@ -1,9 +1,16 @@
 .link {
   $block-name: &; // #{$block-name}__element
 
-  text-decoration: none;
+  color: inherit;
+  background-color: inherit;
+  background-image: var(--text-gradient-link);
+  background-position: 0 0;
+  background-size: 200% 100%;
+  background-clip: text;
+  transition: background-position 0.25s ease;
+  -webkit-text-fill-color: transparent;
 
   &:hover {
-    text-decoration: underline;
+    background-position: 100% 0;
   }
 }

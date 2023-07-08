@@ -10,8 +10,6 @@
   }
 
   &__label {
-    @include field;
-
     order: 1;
 
     #{$block-name}__input[required] + &::after {
@@ -28,8 +26,6 @@
   }
 
   &__message {
-    @include field;
-
     display: none;
     margin-top: 4px;
     color: var(--color-warning);

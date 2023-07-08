@@ -1,0 +1,28 @@
+//- Все примеси в этом файле должны начинаться c имени блока (blog-tile)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin blog-tile(info, mods)
+
+  //- Принимает:
+  //-   info    {string} - контент
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +blog-tile('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' blog-tile--' + modsList[i].trim();
+      }
+    }
+
+  a.blog-tile(class=allMods, href='./blogpost.html')&attributes(attributes)
+    img.blog-tile__image(src= src.assets + 'img__blog-tile--0' + info.img + '.jpg', alt= info.title)
+    .blog-tile__inner
+      h3.blog-tile__title!= info.title
+      p.blog-tile__descr!= info.description
+      .blog-tile__link Подробнее

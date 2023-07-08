@@ -1,0 +1,70 @@
+@import "../../scss/mixins/text-styles";
+
+.blog-tile {
+  $block-name: &; // #{$block-name}__element
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: inherit;
+  text-decoration: none;
+  border-radius: 15px;
+  box-shadow: var(--button-shadow);
+  transition: box-shadow 0.25s ease;
+
+  @media screen and (min-width: $screen-d) {
+    border-radius: 25px;
+  }
+
+  &:hover {
+    box-shadow: var(--button-shadow-hover);
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 1;
+    object-fit: cover;
+  }
+
+  &__inner {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    gap: 5px;
+    align-items: start;
+    padding: 15px 15px 20px;
+
+    @media screen and (min-width: $screen-d) {
+      gap: 10px;
+      min-height: 225px;
+      padding: 25px 25px 30px;
+    }
+  }
+
+  &__title {
+    @include blog-tile-title;
+
+    margin: 0;
+  }
+
+  &__descr {
+    @include blog-tile-descr;
+
+    margin: 0 0 5px;
+  }
+
+  &__link {
+    @include blog-tile-link;
+
+    margin-top: auto;
+    color: inherit;
+    background-color: inherit;
+    background-image: var(--text-gradient-default);
+    background-position: 0 0;
+    background-size: 100% 100%;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

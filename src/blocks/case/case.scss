@@ -1,0 +1,211 @@
+.case {
+  $block-name: &; // #{$block-name}__element
+
+  &__top {
+    display: grid;
+    gap: 20px;
+    justify-items: center;
+
+    @media screen and (min-width: $screen-d) {
+      padding-top: 520px;
+    }
+  }
+
+  &__cover {
+    width: 100vw;
+    height: 56vw;
+    max-height: 500px;
+    margin: 0 -15px;
+    background-position: center;
+    background-size: cover;
+
+    @media screen and (min-width: $screen-t) {
+      margin: 0 -30px;
+    }
+
+    @media screen and (min-width: $screen-d) {
+      position: absolute;
+      left: 0;
+      margin: 0;
+      transform: translateY(calc(-100% - 20px));
+    }
+  }
+
+  &__link {
+    text-align: center;
+    background-color: inherit;
+    background-image: var(--text-gradient-default);
+    background-position: 0 0;
+    background-size: 100% 100%;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__body {
+    margin-top: 35px;
+
+    @media screen and (min-width: $screen-tl) {
+      margin-top: 80px;
+    }
+  }
+
+  &__row {
+    display: grid;
+    gap: 10px;
+
+    @media screen and (min-width: $screen-tl) {
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    & + & {
+      margin-top: 30px;
+
+      @media screen and (min-width: $screen-tl) {
+        margin-top: 50px;
+      }
+    }
+  }
+
+  &__col {
+    h2 {
+      @include case-h2;
+
+      margin: 0;
+    }
+
+    h3 {
+      @include case-h3;
+
+      margin: 0;
+    }
+
+    p {
+      @include case-p;
+
+      margin: 0;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0 0 0 25px;
+    }
+
+    p + ul {
+      margin-top: 10px;
+    }
+
+    li {
+      @include case-li;
+    }
+
+    li + li {
+      margin-top: 5px;
+    }
+  }
+
+  &__image {
+    margin: 25px 0;
+
+    @media screen and (min-width: $screen-tl) {
+      margin: 50px 0;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+
+      @media screen and (min-width: $screen-tl) {
+        border-radius: 25px;
+      }
+    }
+  }
+
+  &__quote {
+    margin: 75px 0;
+    padding: 0;
+
+    @media screen and (min-width: $screen-tl) {
+      margin: 120px 0;
+    }
+
+    p {
+      @include case-quote;
+
+      margin: 0;
+      text-align: center;
+    }
+  }
+
+  &__divider {
+    width: 100%;
+    height: 1px;
+    margin: 40px 0;
+    background-color: var(--front-tertiary);
+
+    @media screen and (min-width: $screen-tl) {
+      margin: 75px 0;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    gap: 15px;
+    margin-top: 25px;
+
+    @media screen and (min-width: $screen-ti) {
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-top: 50px;
+    }
+  }
+
+  &__grid-item {
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+
+      @media screen and (min-width: $screen-tl) {
+        border-radius: 25px;
+      }
+    }
+  }
+
+  &__footer {
+    display: grid;
+    gap: 15px;
+    justify-items: center;
+    margin-top: 50px;
+    padding: 25px 15px 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+
+    @media screen and (min-width: $screen-tl) {
+      margin-top: 80px;
+      padding: 40px 15px 50px;
+    }
+  }
+
+  &__footer-title {
+    @include section-title;
+
+    margin: 0;
+    text-align: center;
+    background-color: inherit;
+    background-image: var(--text-gradient-default);
+    background-position: 0 0;
+    background-size: 100% 100%;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__footer-descr {
+    @include case-p;
+
+    text-align: center;
+  }
+}

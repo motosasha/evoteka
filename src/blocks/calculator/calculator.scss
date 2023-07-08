@@ -1,0 +1,89 @@
+.calculator {
+  $block-name: &; // #{$block-name}__element
+
+  overflow: hidden;
+
+  @media screen and (min-width: $screen-d) {
+    & .container {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 30px;
+    }
+
+    & .section__inner { // stylelint-disable-line
+      grid-column: 6 / 13;
+    }
+
+    & .section__heading { // stylelint-disable-line
+      text-align: left;
+    }
+
+    & .section__descr { // stylelint-disable-line
+      text-align: left;
+    }
+
+    & .section__footer { // stylelint-disable-line
+      justify-content: start;
+      margin-top: 20px;
+    }
+  }
+
+  &__image {
+    margin-bottom: 25px;
+    opacity: 0;
+
+    @media screen and (min-width: $screen-d) {
+      position: absolute;
+      top: 300px;
+      left: 0;
+      width: 100%;
+    }
+
+    svg {
+      width: auto;
+      height: 150px;
+      transform: translateX(-65px);
+
+      @media screen and (min-width: $screen-tl) {
+        width: 100%;
+        height: auto;
+        transform: none;
+      }
+    }
+  }
+
+  &__list {
+    display: grid;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @media screen and (min-width: $screen-d) {
+      margin-top: 180px;
+    }
+  }
+
+  &__line {
+    @include calculator-line;
+
+    text-align: center;
+
+    @media screen and (min-width: $screen-d) {
+      text-align: left;
+    }
+  }
+
+  &__small {
+    @include calculator-small;
+
+    margin-top: 20px;
+    text-align: center;
+
+    @media screen and (min-width: $screen-d) {
+      margin-top: 50px;
+      text-align: left;
+    }
+  }
+}

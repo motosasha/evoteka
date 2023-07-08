@@ -6,7 +6,6 @@
 
   height: 100%;
   color: var(--front-primary);
-  background: var(--back-secondary);
 
   @media screen and (min-width: $screen-ti) {
     display: flex;
@@ -15,41 +14,30 @@
   }
 
   &__inner {
-    display: grid;
-    gap: 24px;
-    min-width: 240px;
-    padding: 32px 16px;
-
-    @media screen and (min-width: $screen-t) {
-      padding: 32px 40px;
-    }
-
-    @media screen and (min-width: $screen-ti) {
-      padding: 96px 0 0;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding: 10vh 15px 50px;
   }
 
-  &__section {
+  &__links {
     display: grid;
-    gap: 8px;
-  }
-
-  &__section-title {
-    @include nav-title;
-
-    color: inherit;
-  }
-
-  &__list {
-    @include list-reset;
-
-    display: grid;
-    gap: 8px;
+    gap: 40px;
+    justify-items: center;
   }
 
   &__link {
     @include nav-link;
 
     color: inherit;
+    text-decoration: none;
+  }
+
+  &__button {
+    width: 100%;
+    max-width: 240px;
+    padding: 10px 25px 10px 20px;
   }
 }

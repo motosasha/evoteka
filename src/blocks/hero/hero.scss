@@ -4,43 +4,113 @@
 .hero {
   $block-name: &; // #{$block-name}__element
 
-  border-bottom: 1px solid var(--divider);
+  width: 100%;
+  height: calc(100vh - 70px);
+  overflow: hidden;
+
+  @media screen and (min-width: $screen-ti) {
+    height: calc(100vh - 95px);
+  }
 
   &__inner {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding: 80px 0;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: calc(100vh - 70px);
+    overflow: hidden;
 
     @media screen and (min-width: $screen-ti) {
-      padding: 56px 0;
+      height: calc(100vh - 95px);
+    }
+
+    .animate & {
+      pointer-events: none;
+    }
+  }
+
+  &__logo {
+    display: block;
+    width: 108%;
+    height: auto;
+    aspect-ratio: 38 / 8;
+    transform: translateY(-150%);
+
+    @media screen and (min-width: $screen-tl) {
+      transform: translateY(-30%);
     }
 
     @media screen and (min-width: $screen-d) {
-      padding: 80px 0;
+      transform: translateY(-20%);
     }
   }
 
-  &__title {
-    @include hero-title;
-
-    margin: 0 0 8px;
-    background: var(--gradient);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+  &__logo-outline path {
+    opacity: 0;
   }
 
-  &__descr {
-    @include hero-descr;
-
-    margin: 0;
-    color: var(--front-secondary);
+  &__logo-solid {
+    width: 100%;
+    opacity: 0;
   }
 
-  &__row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 32px;
+  &__text {
+    @include hero-phrase;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: grid;
+    grid-template-areas: "phrase";
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0 30px;
+    overflow: hidden;
+    transform: translate(-50%, 0);
+    opacity: 0;
+    pointer-events: none;
+
+    @media screen and (min-width: $screen-t) {
+      transform: translate(-50%, -50%);
+    }
+
+    &--visible {
+      opacity: 1;
+    }
+  }
+
+  &__phrase {
+    grid-area: phrase;
+    max-width: 1344px;
+
+    .word {
+      display: inline-block;
+      opacity: 0;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    bottom: 50px;
+    padding: 15px 50px;
+    opacity: 0;
+    transition: all 0.25s ease-in-out;
+
+    @media screen and (min-width: $screen-t) {
+      bottom: 50%;
+      transform: translateY(400%);
+    }
+
+    @media screen and (min-width: $screen-d) {
+      bottom: 50%;
+      transform: translateY(250px);
+    }
+
+    &--visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
   }
 }

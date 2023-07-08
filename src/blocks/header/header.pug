@@ -20,8 +20,26 @@ mixin header(mods)
 
   header.header(class= allMods)&attributes(attributes)
     .header__inner
-      svg.logo.header__logo
-        use(href= src.icon + 'logo__default')
+      if isMainPage
+        .header__logo
+          svg.logo
+            use(href= src.icon + 'logo__evoteka')
+        nav.header__nav
+          a.header__nav-item.link(href='#services') Услуги
+          a.header__nav-item.link(href='#calculator') Калькулятор
+          a.header__nav-item.link(href='./cases.html') Кейсы
+          a.header__nav-item.link(href='./blog.html') Блог
+          a.header__nav-item.link(href='./contacts.html') Контакты
+      else
+        a.header__logo(href='/')
+          svg.logo
+            use(href= src.icon + 'logo__evoteka')
+        nav.header__nav
+          a.header__nav-item.link(href='./#services') Услуги
+          a.header__nav-item.link(href='./#calculator') Калькулятор
+          a.header__nav-item.link(href='./cases.html') Кейсы
+          a.header__nav-item.link(href='./blog.html') Блог
+          a.header__nav-item.link(href='./contacts.html') Контакты
       button.header__menu
         svg.burger(width='28', height='28', viewBox='0 0 28 28', fill='none')
           path.burger__line.burger__line--top(d='M7 8H23C23 8 26 8 26 11C26 14 23 14 23 14H5')

@@ -3,14 +3,16 @@
 .input {
   $block-name: &; // #{$block-name}__element
 
-  @include input;
+  @include body;
 
   height: 48px;
-  padding: 15px 19px;
+  padding: 15px 20px;
   background: var(--back-primary);
-  border: 1px solid var(--border-button);
-  border-radius: 4px;
-  transition: border 0.25s ease-out, outline 0.25s ease-out;
+  border: none;
+  border-radius: 15px;
+  outline: none;
+  box-shadow: var(--button-shadow);
+  transition: box-shadow 0.25s ease-out;
   appearance: none;
 
   &::placeholder {
@@ -19,11 +21,7 @@
 
   &--has-value,
   &:focus {
-    border: 1px solid var(--brand-primary);
-  }
-
-  &:focus {
-    outline: 3px solid var(--brand-primary-light);
+    box-shadow: var(--button-shadow-hover);
   }
 
   &[disabled] {

@@ -1,41 +1,192 @@
+@import "../../scss/breakpoints";
 @import "../../scss/mixins/text-styles";
 
 .footer {
   $block-name: &; // #{$block-name}__element
 
-  padding: 23px 0 24px;
-  border-top: 1px solid var(--border-primary);
+  background: rgba(132 6 98 / 2%);
 
   &__inner {
-    display: flex;
-    justify-content: center;
-    width: calc(100% - 32px);
-    max-width: 1376px;
+    display: grid;
+    grid-template-areas: "logo" "links" "info" "contacts" "copy";
+    width: calc(100% - 30px);
     margin: 0 auto;
+    padding: 30px 0 25px;
 
     @media screen and (min-width: $screen-t) {
-      width: calc(100% - 80px);
+      grid-template-areas:
+        "logo . ."
+        "links links links"
+        "info info info"
+        "contacts contacts contacts"
+        "copy copy copy";
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0 30px;
+      width: calc(100% - 60px);
     }
 
     @media screen and (min-width: $screen-ti) {
-      justify-content: flex-start;
-      width: 100%;
-      padding-left: 320px;
+      grid-template-areas:
+        "logo . ."
+        "links links links"
+        "info info info"
+        "contacts contacts contacts"
+        ". copy copy";
+      padding: 50px 0;
     }
 
     @media screen and (min-width: $screen-tl) {
-      width: calc(100% - 80px);
-      padding-left: 280px;
+      grid-template-areas: none;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 0 30px;
     }
 
-    @media screen and (min-width: $screen-dl) {
-      padding-left: 352px;
+    @media screen and (min-width: $screen-d) {
+      width: calc(100% - 110px);
+    }
+  }
+
+  &__logo {
+    grid-area: logo;
+
+    @media screen and (min-width: $screen-tl) {
+      grid-row: 1 / 2;
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__links {
+    display: grid;
+    grid-area: links;
+    gap: 30px;
+    margin-top: 20px;
+
+    @media screen and (min-width: $screen-t) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (min-width: $screen-ti) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media screen and (min-width: $screen-tl) {
+      grid-row: 1 / 4;
+      grid-column: 5 / 13;
+      grid-template-columns: 3fr 3fr 2fr;
+      margin-top: 10px;
+    }
+
+    @media screen and (min-width: $screen-dxl) {
+      grid-column: 5 / 11;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  &__links-section {
+    display: grid;
+    gap: 10px;
+    align-content: start;
+
+    @media screen and (min-width: $screen-d) {
+      gap: 20px;
+    }
+  }
+
+  &__links-title {
+    @include footer-default;
+
+    color: var(--front-secondary);
+  }
+
+  &__links-body {
+    display: grid;
+    gap: 10px;
+
+    @media screen and (min-width: $screen-d) {
+      gap: 15px;
+    }
+  }
+
+  &__link {
+    @include footer-default;
+
+    color: inherit;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  &__info {
+    @include footer-info;
+
+    grid-area: info;
+    margin-top: 30px;
+    color: var(--front-secondary);
+
+    @media screen and (min-width: $screen-tl) {
+      grid-row: 2 / 3;
+      grid-column: 1 / 5;
+      margin-top: 15px;
+    }
+
+    @media screen and (min-width: $screen-d) {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__contacts {
+    display: grid;
+    grid-area: contacts;
+    gap: 10px;
+    margin-top: 25px;
+
+    @media screen and (min-width: $screen-tl) {
+      grid-row: 4;
+      grid-column: 5 / 13;
+    }
+
+    @media screen and (min-width: $screen-tl) {
+      gap: 5px;
+    }
+
+    @media screen and (min-width: $screen-d) {
+      margin-top: 55px;
+    }
+  }
+
+  &__contacts-item {
+    @include footer-default;
+
+    font-style: normal;
+  }
+
+  &__contacts-title {
+    display: block;
+    color: var(--front-secondary);
+
+    @media screen and (min-width: $screen-ti) {
+      display: inline;
+    }
+
+    @media screen and (min-width: $screen-tl) {
+      display: block;
+    }
+
+    @media screen and (min-width: $screen-d) {
+      display: inline;
     }
   }
 
   &__copy {
-    @include footer;
+    @include footer-default;
 
-    color: var(--front-secondary);
+    grid-area: copy;
+    margin-top: 45px;
+    color: inherit;
+
+    @media screen and (min-width: $screen-tl) {
+      grid-row: 3 / 4;
+      grid-column: 1 / 5;
+      margin-top: 10px;
+    }
   }
 }

@@ -1,0 +1,64 @@
+.reviews {
+  $block-name: &; // #{$block-name}__element
+
+  overflow: hidden;
+
+  &__slider {
+    position: relative;
+    width: 100vw;
+    margin: 0 -15px;
+    padding-bottom: 40px;
+
+    @media screen and (min-width: $screen-t) {
+      margin: 0 -30px;
+    }
+
+    @media screen and (min-width: $screen-ti) {
+      width: 100%;
+      max-width: 1064px;
+      margin: 0 auto;
+    }
+  }
+
+  &__slider-inner {
+    @media screen and (min-width: $screen-ti) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+  }
+
+  &__slider-slide {
+    height: auto;
+    padding: 0 15px;
+
+    @media screen and (min-width: $screen-ti) {
+      padding: 0;
+    }
+
+    > * {
+      height: 100%;
+    }
+  }
+
+  &__slider-pagination {
+    bottom: 0 !important;
+    left: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+    transform: none;
+
+    .swiper-pagination-bullet {
+      width: 24px;
+      height: 4px;
+      background-color: var(--front-secondary);
+      border-radius: 4px;
+
+      &-active {
+        background-color: var(--brand-primary);
+      }
+    }
+  }
+}

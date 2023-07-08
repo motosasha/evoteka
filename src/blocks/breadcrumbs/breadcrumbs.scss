@@ -1,0 +1,61 @@
+@import "../../scss/mixins/list-reset";
+@import "../../scss/mixins/text-styles";
+
+.breadcrumbs {
+  $block-name: &; // #{$block-name}__element
+
+  @include list-reset;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  &__item {
+    @include breadcrumbs;
+
+    display: flex;
+    gap: 10px;
+
+    &:not(:first-child) {
+      position: relative;
+
+      &::before {
+        color: var(--front-secondary);
+        content: "/";
+      }
+    }
+
+    &:first-child,
+    &:last-child {
+      display: flex;
+    }
+
+    &:nth-child(n + 3) {
+      display: none;
+
+      @media screen and (min-width: $screen-ti) {
+        display: flex;
+      }
+    }
+
+    @media screen and (min-width: $screen-t) {
+      display: flex;
+    }
+  }
+
+  &__link {
+    @include breadcrumbs;
+
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    transition: 0.25s ease;
+  }
+
+  &__span {
+    @include breadcrumbs;
+
+    display: block;
+    color: var(--front-secondary);
+  }
+}

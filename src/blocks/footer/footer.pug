@@ -20,4 +20,30 @@ mixin footer(mods)
 
   footer.footer(class= allMods)&attributes(attributes)
     .footer__inner
-      .footer__copy © Project builder
+      .footer__logo
+        svg.logo
+          use(href= src.icon + 'logo__evoteka')
+      .footer__links
+        .footer__links-section
+          .footer__links-title Компания
+          .footer__links-body
+            a.footer__link.link(href='#') О нас
+            a.footer__link.link(href='https://kazan.hh.ru/employer/5601574?hhtmFrom=vacancy') Вакансии
+            a.footer__link.link(href='#') Контактная информация
+        .footer__links-section
+          .footer__links-title Услуги
+          .footer__links-body
+            a.footer__link.link(href='#') Сайты и веб-сервисы
+            a.footer__link.link(href='#') Мобильная разработка
+            a.footer__link.link(href='#') Маркетинговый калькулятор
+        .footer__links-section
+          .footer__links-title Практика
+          .footer__links-body
+            a.footer__link.link(href='cases.html') Кейсы
+            a.footer__link.link(href='blog.html') Блог и новости
+            a.footer__link.link(href='#') Телеграм канал
+      .footer__info Ваш IT-партнер полного цикла, с собственной продуктовой аналитикой, дизайном, веб-и мобильной разработкой
+      .footer__contacts
+        address.footer__contacts-item #[span.footer__contacts-title Офис продаж:] Респ. Татарстан, г. Казань, ул. Спартаковская 2, #[nobr «IT-Park Имени Башира Рамеева»], 2 этаж, оф. 210
+        .footer__contacts-item #[span.footer__contacts-title ИНН:] 1658201149
+      .footer__copy 2023 © ООО «Эвотека». Все права защищены

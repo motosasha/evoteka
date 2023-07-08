@@ -89,9 +89,13 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
+    "animejs": "^3.2.1",
     "autosize": "^5.0.2",
     "imask": "^6.4.3",
-    "sanitize.css": "^13.0.0"
+    "sanitize.css": "^13.0.0",
+    "simplebar": "^6.2.5",
+    "slim-select": "^2.4.5",
+    "swiper": "^8.4.7"
   },
   "husky": {
     "hooks": {

@@ -1,0 +1,66 @@
+extends ../templates/layout_default.pug
+
+block variables
+  - isMainPage = false
+  - pageTitle = 'Эвотека | Блог и новости'
+  - metaDescription = 'description'
+  - metaKeywords = 'keywords'
+  -
+    blogTiles = [
+      {
+        title: '«Яндекс», Avito и Wildberries возглавили топ самых дорогих компаний в рейтинге Forbes',
+        description: 'Forbes представил рейтинг стоимости российских интернет-компаний',
+        img: 1
+      },
+      {
+        title: '«Одноклассники» отметили прирост активной аудитории',
+        description: 'Пользователи чаще, чем раньше, регистрируются и восстанавливают свои профили в соцсети',
+        img: 2
+      },
+      {
+        title: 'Новые клиентские аудитории',
+        description: 'Объедините все онлайн и офлайн данные о ваших клиентах в единую систему',
+        img: 3
+      },
+      {
+        title: '«Яндекс», Avito и Wildberries возглавили топ самых дорогих компаний в рейтинге Forbes',
+        description: 'Forbes представил рейтинг стоимости российских интернет-компаний',
+        img: 1
+      },
+      {
+        title: '«Одноклассники» отметили прирост активной аудитории',
+        description: 'Пользователи чаще, чем раньше, регистрируются и восстанавливают свои профили в соцсети',
+        img: 2
+      },
+      {
+        title: 'Новые клиентские аудитории',
+        description: 'Объедините все онлайн и офлайн данные о ваших клиентах в единую систему',
+        img: 3
+      },
+    ]
+  -
+    breadcrumbs = [
+      {
+        title: 'Блог и новости'
+      }
+    ]
+  -
+    blogTags = [
+      { title: 'Все', active: true},
+      { title: 'Бизнес'},
+      { title: 'Реклама'}
+    ]
+
+block content
+  .main
+    .container
+      .main__header
+        +breadcrumbs(breadcrumbs)
+        h1.main__title Блог и новости
+    +tags(blogTags)
+    .container
+      .main__body
+        .blog-grid
+          each tile in blogTiles
+            +blog-tile(tile)
+      +pagination

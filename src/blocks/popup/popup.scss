@@ -1,0 +1,157 @@
+.popup {
+  $block-name: &; // #{$block-name}__element
+
+  width: calc(100% - 30px);
+  max-width: 360px;
+  margin: 0 auto;
+
+  @media screen and (min-width: $screen-t) {
+    width: calc(100% - 60px);
+  }
+
+  @media screen and (min-width: $screen-ti) {
+    padding: 30px 0 25px;
+  }
+
+  @media screen and (min-width: $screen-tl) {
+    max-width: 1344px;
+  }
+
+  @media screen and (min-width: $screen-d) {
+    width: calc(100% - 110px);
+  }
+
+  &--thanks {
+    @media screen and (min-width: $screen-tl) {
+      max-width: 640px;
+    }
+  }
+
+  &__inner {
+    position: relative;
+    padding: 25px 25px 30px;
+    background: rgba(232 233 233 / 10%);
+    border-radius: 24px;
+    box-shadow: 0 0 40px 0 rgba(0 0 0 / 5%) inset;
+    backdrop-filter: blur(20px);
+
+    @media screen and (min-width: $screen-tl) {
+      padding: 100px 0 60px;
+    }
+  }
+
+  &__close {
+    top: 15px;
+    right: 15px;
+
+    @media screen and (min-width: $screen-d) {
+      top: 30px;
+      right: 30px;
+    }
+  }
+
+  &__icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  &__grid {
+    @media screen and (min-width: $screen-tl) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+  }
+
+  &__quote {
+    display: none;
+
+    @media screen and (min-width: $screen-tl) {
+      display: grid;
+      align-items: center;
+      justify-items: center;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 360px;
+    height: 360px;
+    overflow: hidden;
+    border-radius: 30px;
+  }
+
+  &__text {
+    @include popup-quote;
+
+    max-width: 448px;
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  &__cite {
+    @include popup-cite;
+
+    max-width: 260px;
+    margin-top: 20px;
+    color: var(--front-secondary);
+    text-align: center;
+  }
+
+  &__header {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 20px;
+
+    @media screen and (min-width: $screen-tl) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__heading {
+    @include popup-title;
+
+    margin: 0;
+    background-color: inherit;
+    background-image: var(--text-gradient-default);
+    background-position: 0 0;
+    background-size: 100% 100%;
+    background-clip: text;
+    transition: background-position 0.25s ease;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__descr {
+    @include popup-descr;
+
+    margin: 0;
+  }
+
+  &__form {
+    @media screen and (min-width: $screen-tl) {
+      padding-right: 100px;
+
+      .form__grid { // stylelint-disable-line
+        max-width: 520px;
+      }
+    }
+  }
+
+  &__center {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+    @media screen and (min-width: $screen-tl) {
+      padding-bottom: 20px;
+    }
+
+    #{$block-name}__heading {
+      text-align: center;
+    }
+
+    #{$block-name}__descr {
+      text-align: center;
+    }
+  }
+}

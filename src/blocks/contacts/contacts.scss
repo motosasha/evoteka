@@ -1,0 +1,121 @@
+.contacts {
+  $block-name: &; // #{$block-name}__element
+
+  &__row {
+    display: grid;
+    gap: 15px;
+    margin-bottom: 35px;
+
+    @media screen and (min-width: $screen-tl) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  &__item {
+    @include flex-column;
+  }
+
+  &__label {
+    @include contacts-label;
+
+    color: var(--front-secondary);
+  }
+
+  &__descr {
+    @include contacts-descr;
+  }
+
+  &__link {
+    @include contacts-link;
+
+    background-color: inherit;
+    background-image: var(--text-gradient-default);
+    background-position: 0 0;
+    background-size: 100% 100%;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__map {
+    height: 200px;
+    margin-bottom: 40px;
+    background-color: var(--front-secondary);
+
+    @media screen and (min-width: $screen-t) {
+      height: 250px;
+      margin: 40px 0;
+    }
+
+    @media screen and (min-width: $screen-tl) {
+      height: 300px;
+    }
+
+    @media screen and (min-width: $screen-d) {
+      margin: 40px 0 100px;
+    }
+
+    iframe {
+      height: 100%;
+    }
+  }
+
+  &__col {
+    display: grid;
+    gap: 10px;
+
+    @media screen and (min-width: $screen-tl) {
+      gap: 20px;
+    }
+  }
+
+  &__form {
+    max-width: 1068px;
+    margin: 0 auto;
+
+    .textarea {
+      height: 106px;
+
+      @media screen and (min-width: $screen-tl) {
+        height: 116px !important;
+      }
+    }
+  }
+
+  &__form-grid {
+    display: grid;
+    gap: 10px;
+
+    @media screen and (min-width: $screen-ti) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (min-width: $screen-tl) {
+      gap: 20px;
+    }
+  }
+
+  &__form-row {
+    display: grid;
+    gap: 15px;
+    align-items: center;
+    margin-top: 30px;
+
+    @media screen and (min-width: $screen-t) {
+      grid-template-columns: 1fr 2fr;
+      gap: 30px;
+    }
+
+    @media screen and (min-width: $screen-tl) {
+      grid-template-columns: 2fr 4fr 2fr;
+      margin-top: 50px;
+    }
+  }
+
+  &__form-small {
+    @include form-small;
+
+    a {
+      font-weight: 700;
+    }
+  }
+}

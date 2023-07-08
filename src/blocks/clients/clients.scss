@@ -1,0 +1,12 @@
+.clients {
+  $block-name: &; // #{$block-name}__element
+
+  &__grid {
+    display: grid;
+    gap: 30px;
+
+    @media screen and (min-width: $screen-ti) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}

@@ -1,0 +1,71 @@
+@import "../../scss/mixins/text-styles";
+
+.review-tile {
+  $block-name: &; // #{$block-name}__element
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  padding: 0 15px;
+  background-color: var(--back-primary);
+
+  @media screen and (min-width: $screen-ti) {
+    align-items: start;
+    padding: 15px 15px 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+  }
+
+  @media screen and (min-width: $screen-d) {
+    padding: 25px;
+  }
+
+  &__logo {
+    display: block;
+    width: auto;
+    height: 30px;
+
+    @media screen and (min-width: $screen-d) {
+      height: 50px;
+    }
+  }
+
+  &__text {
+    @include review-text;
+
+    text-align: center;
+
+    @media screen and (min-width: $screen-ti) {
+      text-align: left;
+    }
+  }
+
+  &__info {
+    display: grid;
+    gap: 5px;
+    justify-content: center;
+    margin-top: auto;
+  }
+
+  &__name {
+    @include review-name;
+
+    text-align: center;
+
+    @media screen and (min-width: $screen-ti) {
+      text-align: left;
+    }
+  }
+
+  &__place {
+    @include review-place;
+
+    color: var(--front-secondary);
+    text-align: center;
+
+    @media screen and (min-width: $screen-ti) {
+      text-align: left;
+    }
+  }
+}

@@ -3,37 +3,174 @@
 .select {
   $block-name: &; // #{$block-name}__element
 
-  @include input;
+  @include body;
 
-  height: 48px;
-  padding: 15px 47px 15px 19px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 48px;
+  padding: 15px 40px 15px 20px;
+  overflow: hidden;
+  color: inherit;
   background: url("../{{icon}}/icon__arrow--down-view") right 11px top 11px no-repeat, var(--back-primary);
   background-size: 24px 24px;
-  border: 1px solid var(--border-button);
-  border-radius: 4px;
+  border: none;
+  border-radius: 15px;
   outline: none;
-  transition: border 0.25s ease-out;
+  box-shadow: var(--button-shadow);
+  cursor: pointer;
+  transition: box-shadow 0.25s ease-out;
   appearance: none;
+  user-select: none;
 
-  &::placeholder {
-    color: var(--front-secondary);
+  &.ss-main.ss-disabled {
+    color: inherit;
+    cursor: not-allowed;
   }
 
-  &[disabled] {
-    color: var(--front-tertiary);
-    border-color: var(--border-button-disabled);
-    cursor: not-allowed;
+  .ss-hide {
+    display: none !important;
+  }
 
-    &::placeholder {
-      color: var(--front-tertiary);
+  &.ss-main .ss-values {
+    display: inline-flex;
+    flex: 1 1 100%;
+    flex-wrap: wrap;
+  }
+
+  &.ss-main .ss-values .ss-single {
+    display: flex;
+    margin: auto 0;
+  }
+
+  &.ss-main .ss-deselect {
+    display: flex;
+    flex: 0 1 auto;
+    align-self: center;
+    justify-content: flex-end;
+    width: 8px;
+    height: 8px;
+    margin: 0;
+  }
+
+  &.ss-main .ss-deselect svg {
+    width: 8px;
+    height: 8px;
+  }
+
+  &.ss-main .ss-deselect svg path {
+    fill: none;
+    stroke-width: 20;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  &.ss-main .ss-arrow {
+    display: none;
+  }
+
+  &.ss-content {
+    position: absolute;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: auto;
+    height: auto;
+    max-height: 248px;
+    padding: 8px 0;
+    overflow: hidden;
+    background: var(--back-primary);
+    background-clip: padding-box;
+    border: none;
+    border-radius: 15px;
+    box-shadow: var(--button-shadow);
+    transform: scaleY(0);
+    transform-origin: center top;
+    opacity: 0;
+    transition: transform 0.25s, opacity 0.25s;
+  }
+
+  &.ss-content.ss-relative {
+    position: relative;
+    height: 100%;
+  }
+
+  &.ss-content.ss-open-above {
+    flex-direction: column-reverse;
+    transform: scaleY(1) translateY(-1px);
+    transform-origin: center bottom;
+    opacity: 1;
+  }
+
+  &.ss-content.ss-open-below {
+    transform: scaleY(1) translateY(2px);
+    transform-origin: center top;
+    opacity: 1;
+  }
+
+  &.ss-content .ss-search {
+    display: none;
+  }
+
+  &.ss-content .ss-list {
+    flex: 1 1 auto;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 0;
+      background: #000;
     }
   }
 
-  &:-webkit-autofill,
-  &:-webkit-autofill:hover,
-  &:-webkit-autofill:focus {
-    border: 1px solid var(--border-button);
-    -webkit-text-fill-color: var(--back-primary);
-    -webkit-box-shadow: none;
+  &.ss-content .ss-list .ss-option {
+    @include body;
+
+    display: flex;
+    padding: 8px 32px 8px 16px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  &.ss-content .ss-list .ss-option:hover {
+    background-color: rgba(132 6 98 / 5%);
+  }
+
+  &.ss-content .ss-list .ss-option + .ss-option {
+    margin-top: 8px;
+  }
+
+  &.ss-content .ss-list .ss-option.ss-selected {
+    @include body;
+  }
+
+  & .simplebar-wrapper {
+    max-height: 232px;
+  }
+
+  .simplebar-track.simplebar-vertical {
+    top: 8px;
+    right: 16px;
+    bottom: 8px;
+    width: 8px;
+    background: transparent;
+    border-radius: 4px;
+  }
+
+  .simplebar-scrollbar::before {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: var(--front-tertiary);
+    border-radius: 4px;
+  }
+
+  .simplebar-scrollbar.simplebar-visible::before {
+    opacity: 1;
   }
 }

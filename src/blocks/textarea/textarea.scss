@@ -3,15 +3,16 @@
 .textarea {
   $block-name: &; // #{$block-name}__element
 
-  @include textarea;
+  @include body;
 
   min-height: 80px;
-  padding: 15px 19px;
+  padding: 15px 20px;
   background: var(--back-primary);
-  border: 1px solid var(--border-button);
-  border-radius: 4px;
+  border: none;
+  border-radius: 15px;
   outline: none;
-  transition: border 0.25s ease-out;
+  box-shadow: var(--button-shadow);
+  transition: box-shadow 0.25s ease-out;
   appearance: none;
   resize: none;
 
@@ -21,7 +22,7 @@
 
   &--has-value,
   &:focus {
-    border: 1px solid var(--brand-primary);
+    box-shadow: var(--button-shadow-hover);
   }
 
   &[disabled] {

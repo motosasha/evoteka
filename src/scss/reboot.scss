@@ -1,3 +1,5 @@
+@import "breakpoints";
+
 :root {
   font-size: var(--font-size-root);
 }
@@ -15,7 +17,22 @@ html {
   line-height: normal;
   -webkit-tap-highlight-color: rgb(var(--color-black) 0);
   -webkit-text-size-adjust: 100%; // stylelint-disable-line
-  scroll-behavior: smooth;
+  //scroll-behavior: smooth;
+
+  &.animate {
+    overflow: hidden;
+    margin-right: var(--css-scroll-size);
+  }
+
+  &[data-state="mobile-menu"] {
+    overflow: hidden;
+  }
+
+  @media screen and (min-width: $screen-t) {
+    &[data-state="mobile-menu"] {
+      overflow: auto;
+    }
+  }
 }
 
 body {

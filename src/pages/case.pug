@@ -1,0 +1,146 @@
+extends ../templates/layout_default.pug
+
+block variables
+  - isMainPage = false
+  - pageTitle = 'Эвотека | Название кейса'
+  - metaDescription = 'description'
+  - metaKeywords = 'keywords'
+
+  -
+    clientsTiles = [
+      {
+        title: 'Личный кабинет для лизинговой компании Т-Лизинг',
+        description: 'Разработка личного кабинета для клиентов лизинговой компании с нуля с интеграцией с внутренним бэк-офисом',
+        img: 1,
+        tags: [
+          { title: 'дизайн', href: '#' },
+          { title: 'разработка', href: '#' },
+          { title: 'платформа', href: '#' }
+        ]
+      },
+      {
+        title: 'Heat Cloud',
+        description: 'Heatcloud — проект по разработке программного комплекса по удаленному управлению отопительными котлами и другими устройствами',
+        img: 2,
+        tags: [
+          { title: 'разработка', href: '#' },
+          { title: 'платформа', href: '#' }
+        ]
+      }
+    ]
+  -
+    breadcrumbs = [
+      {
+        title: 'Кейсы',
+        type: 'link',
+        url: '#'
+      },
+      {
+        title: 'Страховая компания «АК БАРС Мед»',
+      }
+    ]
+
+block content
+  .main
+    .container
+      .main__header
+        +breadcrumbs(breadcrumbs)
+        h1.main__title Страховая компания «АК БАРС Мед»
+    .container
+      .main__body
+        .case
+          .case__top
+            .case__cover(style='background-image: url(' + src.assets + 'img__case--cover.jpg)')
+            a.case__link(href='http://www.akbarsmed.ru', target='_blank') http://www.akbarsmed.ru
+          .case__body
+            .case__row
+              .case__col
+                h2 Заголовок
+              .case__col
+                p Страховая компания «АК БАРС Мед» №1 на рынке Республики Татарстан. Входит в топ 30 страховых компаний России, предоставляющих услуги ОМС и ДМС. Более 3 млн. человек пользуются ее услугами.
+            .case__divider
+            .case__row
+              .case__col
+                h2 Предыстория
+              .case__col
+                p Страховая компания «АК БАРС Мед» предложила нам участие в конкурсе на право разработки экосистемы цифровых решений.
+            .case__row
+              .case__col
+                h3 Проект реализуется с целью:
+              .case__col
+                ul
+                  li Повышения качества клиентского сервиса;
+                  li Увеличения количество клиентов, пользующихся услугами компании онлайн;
+                  li Повышения количества продаж услуг через новые каналы;
+                  li Увеличения эффективности компании за счет автоматизации бизнес процессов.
+            figure.case__image
+              img(src= src.assets + 'img__case--01.jpg', alt='')
+            blockquote.case__quote
+              p В рамках тендера перед нами была поставлена задача на разработку экосистемы продуктов компании и мобильных приложений с интеграцией телемедицины.
+            .case__row
+              .case__col
+                h3 Почему мы:
+              .case__col
+                ul
+                  li Повышения качества клиентского сервиса;
+                  li Увеличения количество клиентов, пользующихся услугами компании онлайн;
+                  li Повышения количества продаж услуг через новые каналы;
+                  li Увеличения эффективности компании за счет автоматизации бизнес процессов.
+            .case__divider
+            .case__row
+              .case__col
+                h2 Задача
+              .case__col
+                p Перед нами стояла сложная задача, в сжатый срок — 5 месяцев, разработать экосистему решений. В течение указанного срока нами было выполнено:
+                ul
+                  li Обновление визуального стиля компании;
+                  li Создание сайта страховой компании «АК БАРС Мед»;
+                  li Разработка мобильных приложений для платформ iOS и Android;
+                  li Реализация удобного и функционального личного кабинета клиента;
+                  li Реализация панели администратора;
+                  li Произведена интеграция описанных выше решений с бизнес-процессами компании, в том числе с АРМ лечащего врача.
+            figure.case__image
+              img(src= src.assets + 'img__case--02.jpg', alt='')
+            .case__row
+              .case__col
+                h2 Наше решение
+              .case__col
+                p Перед тем как приступить к разработке, мы провели анализ бизнес-процессов «АК БАРС Мед», для того, чтобы разрабатываемые решения были удобными для клиентов и соответствовали целям заказчика.
+            .case__row
+              .case__col
+                h3 Нами были сделаны:
+              .case__col
+                ul
+                  li Исследование рынка страховых услуг выявлены тренды;
+                  li Анализ продуктов и технических решений конкурентов.
+                  li Карта бизнес процессов департаментов компании;
+                  li Анализ способов взаимодействия с клиентами и предоставления услуг;
+                  li Целевые интервью с клиентами «АК БАРС Мед»;
+                  li Приоритетный список услуги для автоматизации и отображения в приложении.
+            .case__grid
+              .case__grid-item
+                img(src= src.assets + 'img__case--03.jpg', alt='')
+              .case__grid-item
+                img(src= src.assets + 'img__case--03.jpg', alt='')
+              .case__grid-item
+                img(src= src.assets + 'img__case--03.jpg', alt='')
+              .case__grid-item
+                img(src= src.assets + 'img__case--03.jpg', alt='')
+          .case__footer
+            .case__footer-title Хочешь так же?
+            .case__footer-descr Оставь заявку и мы обсудим подробности проекта
+            button.button.button--primary.case__footer-button(data-hystmodal='#popup')
+              .button__title Оставить заявку
+
+  section.section.clients
+    .container
+      .section__inner
+        header.section__header
+          h2.section__heading Другие проекты
+        .section__body
+          .clients__grid
+            each tile in clientsTiles
+              +client-tile(tile)
+
+  +popup()
+  +popup-thanks()

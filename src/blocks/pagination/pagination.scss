@@ -1,0 +1,53 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/flexbox";
+@import "../../scss/mixins/text-styles";
+
+.pagination {
+  @include flex-center;
+
+  padding-top: 40px;
+
+  @media screen and (min-width: $screen-tl) {
+    padding-top: 50px;
+  }
+
+  &__inner {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+  }
+
+  &__pages {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__current,
+  &__link,
+  &__span {
+    @include flex-center;
+    @include tag;
+
+    min-width: 35px;
+    padding: 5px 10px;
+    color: inherit;
+    white-space: nowrap;
+    text-align: center;
+    text-decoration: none;
+    background: var(--back-primary);
+    border: 1px solid transparent;
+    border-radius: 20px;
+    box-shadow: 0 10px 10px 0 rgba(132 6 98 / 15%);
+    transition: box-shadow 0.25s ease;
+
+    &[href]:hover {
+      box-shadow: 0 10px 15px 0 rgba(132 6 98 / 25%);
+    }
+  }
+
+  &__current {
+    background: linear-gradient(white, white) padding-box, var(--text-gradient-default) border-box;
+    border: 1px solid transparent;
+    cursor: default;
+  }
+}

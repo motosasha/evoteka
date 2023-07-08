@@ -18,11 +18,20 @@ mixin nav
 
   nav.nav(class=allMods)&attributes(attributes)
     .nav__inner
-      each section in library.section
-        .nav__section
-          a.nav__section-title.link(href= '#' + section.href)!= section.title
-          if section.list
-            ul.nav__list
-              each item in section.list
-                li.nav__item
-                  a.nav__link.link(href= '#' + item.title)!= item.title
+      if isMainPage
+        nav.nav__links
+          a.nav__link(href='#services') Услуги
+          a.nav__link(href='#calculator') Калькулятор
+          a.nav__link(href='./cases.html') Кейсы
+          a.nav__link(href='./blog.html') Блог
+          a.nav__link(href='./contacts.html') Контакты
+      else
+        nav.nav__links
+          a.nav__link(href='./#services') Услуги
+          a.nav__link(href='./#calculator') Калькулятор
+          a.nav__link(href='./cases.html') Кейсы
+          a.nav__link(href='./blog.html') Блог
+          a.nav__link(href='./contacts.html') Контакты
+      a.nav__button.button(href='https://evoteka.ru/wp-content/themes/echolot/OOO_Evoteka.pdf', download)
+        img.button__icon(src= src.img + 'icon__download.svg', alt='download')
+        .button__title Карта партнёра

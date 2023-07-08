@@ -1,44 +1,46 @@
+@import "../../scss/breakpoints";
+
 .page {
   $block-name: &; // #{$block-name}__element
 
   display: flex;
   flex-direction: column;
+  width: 100%;
   min-height: 100vh;
 
   &__header {
     position: fixed;
     z-index: 5;
     flex: 0 0 auto;
-    width: 100%;
+    width: calc(100vw - var(--css-scroll-size));
+    opacity: 0;
   }
 
   &__main {
     flex: 1 0 auto;
-    padding-top: 64px;
+    padding-top: 70px;
 
     @media screen and (min-width: $screen-ti) {
-      padding-left: 280px;
-    }
-
-    @media screen and (min-width: $screen-dl) {
-      padding-left: calc((100vw - 1376px) / 2 + 240px);
+      padding-top: 95px;
     }
   }
 
   &__footer {
     position: relative;
-    z-index: 5;
     flex: 0 0 auto;
   }
 
   &__nav {
     position: fixed;
-    top: 64px;
+    top: 0;
     z-index: 4;
     width: 100%;
-    height: calc(100% - 64px);
-    transform: translateY(32px);
+    height: 100%;
+    padding-top: 70px;
+    background: var(--back-transparency);
+    transform: translateY(30px);
     opacity: 0;
+    backdrop-filter: blur(20px);
     transition: height 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
     pointer-events: none;
     will-change: opacity, transform;
@@ -50,14 +52,38 @@
     }
 
     @media screen and (min-width: $screen-ti) {
-      width: 280px;
-      transform: translateY(0);
-      opacity: 1;
-      pointer-events: auto;
+      display: none;
+    }
+  }
+
+  &__button {
+    position: fixed;
+    z-index: 6;
+    display: none;
+    padding: 10px 25px 10px 20px;
+    opacity: 0;
+    transition: all 0.25s ease-in-out;
+
+    @media screen and (min-width: $screen-ti) {
+      bottom: 35px;
+      left: 30px;
+      display: flex;
     }
 
-    @media screen and (min-width: $screen-dl) {
-      width: calc((100vw - 1376px) / 2 + 240px);
+    @media screen and (min-width: $screen-tl) {
+      bottom: 55px;
+    }
+
+    @media screen and (min-width: $screen-d) {
+      bottom: 45px;
+      left: 55px;
+      font-size: 12px;
+      line-height: 1.25;
+      letter-spacing: 0.48px;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
     }
   }
 }

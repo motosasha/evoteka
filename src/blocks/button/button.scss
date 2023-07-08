@@ -7,60 +7,53 @@
   @include flex-center;
   @include button-title;
 
-  padding: 11px 20px;
-  color: var(--front-invert);
+  gap: 10px;
+  padding: 10px 20px;
+  color: inherit;
   text-decoration: none;
-  background: none;
+  background: var(--back-primary);
   border: none;
-  border-radius: 20px;
+  border-radius: 10px;
+  outline: none;
+  box-shadow: var(--button-shadow);
   cursor: pointer;
-  transition: background 0.25s ease, border 0.25s ease, color 0.25s ease;
+  transition: box-shadow 0.25s ease;
   appearance: none;
 
   &--primary {
-    background: var(--brand-primary);
-    border: 1px solid var(--brand-primary);
+    position: relative;
+    overflow: hidden;
+    background:
+      linear-gradient(white, white) padding-box,
+      var(--text-gradient-default) border-box;
+    border: 1px solid transparent;
 
-    &:hover {
-      background: var(--brand-primary-dark);
+    @media screen and (min-width: $screen-tl) {
+      min-width: 240px;
+      padding: 20px 50px;
     }
 
     &[disabled],
     &#{$block-name}--disabled {
-      background: var(--brand-primary-light);
-      border-color: var(--brand-primary-light);
+      background:
+        linear-gradient(white, white) padding-box,
+        var(--front-secondary) border-box;
+      border: 1px solid transparent;
+      opacity: 0.25;
+      pointer-events: none;
     }
   }
 
-  &--secondary {
-    color: var(--front-primary);
-    background: var(--back-secondary);
-    border: 1px solid var(--border-button);
-
-    &:hover {
-      border-color: var(--front-primary);
-    }
-
-    &[disabled],
-    &#{$block-name}--disabled {
-      color: var(--front-tertiary);
-      border-color: var(--border-button-disabled);
-    }
-  }
-
-  &--disabled {
-    pointer-events: none;
-  }
-
-  &:focus {
-    outline: 3px solid var(--brand-primary-light);
-  }
-
-  &[disabled] {
-    cursor: not-allowed;
+  &:hover {
+    box-shadow: var(--button-shadow-hover);
   }
 
   &__title {
     display: block;
+  }
+
+  &__icon {
+    width: 25px;
+    height: 25px;
   }
 }

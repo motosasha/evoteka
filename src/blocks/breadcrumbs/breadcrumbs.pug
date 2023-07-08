@@ -1,0 +1,31 @@
+//- Все примеси в этом файле должны начинаться c имени блока (breadcrumbs)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin breadcrumbs(links, mods)
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +breadcrumbs('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' breadcrumbs--' + modsList[i].trim();
+      }
+    }
+
+  ul.breadcrumbs(class=allMods)&attributes(attributes)
+    li.breadcrumbs__item
+      a.breadcrumbs__link.link(href='/') Главная
+    each item in links
+      if item.type === 'link'
+        li.breadcrumbs__item
+          a.breadcrumbs__link.link(href= item.url)!= item.title
+      else
+        li.breadcrumbs__item
+          span.breadcrumbs__span!= item.title

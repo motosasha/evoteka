@@ -9,7 +9,7 @@ mixin select(options, mods, name, id)
   //-   name        {string} - атрибут name
   //-   id          {string} - атрибут id
   //- Вызов:
-        +select(['Выберите опцию', 'Один', 'Два'], 'some-mods', 'select-id', 'select-id')
+        +select(['Выберите опцию', 'Один', 'Два'], 'some-mods', 'select-name', 'select-id')
 
   -
     // список модификаторов
@@ -22,5 +22,5 @@ mixin select(options, mods, name, id)
     }
 
   select.select(class=mods, name= name, id= id)&attributes(attributes)
-    each option, index in options ? options : []
-      option(value= index)!= option
+    each option in options ? options : []
+      option(value= option)!= option

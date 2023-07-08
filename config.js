@@ -1,5 +1,17 @@
 /* global module */
 
+let paths = {
+  "js": "./js/",
+  "css": "./css/",
+  "img": "./img/",
+  "fonts": "./fonts/",
+  "pages": "/",
+  "assets": "./assets/",
+  get icon() {
+    return `${this.img}svgSprite.svg#`;
+  }
+}
+
 let sources = {
   "js": "/js/",
   "css": "/css/",
@@ -34,7 +46,7 @@ let config = {
     "src/scss/reboot.scss",
     // "src/scss/mixins.scss",
     // "src/scss/typography.scss",
-    // "src/scss/vendor.scss",
+    "src/scss/vendor.scss",
     "src/scss/fonts.scss",
     // "src/scss/animations.scss"
     // "somePackage/dist/somePackage.css", // для "node_modules/somePackage/dist/somePackage.css",
@@ -54,7 +66,8 @@ let config = {
     "svgAsBg": "src/symbols/svgAsBg.xml",
     "build": "build",
   },
-  "sources": sources
+  "sources": sources,
+  "paths": paths
 };
 
 module.exports = config;

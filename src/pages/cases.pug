@@ -1,0 +1,120 @@
+extends ../templates/layout_default.pug
+
+block variables
+  - isMainPage = false
+  - pageTitle = 'Эвотека | Кейсы'
+  - metaDescription = 'description'
+  - metaKeywords = 'keywords'
+  -
+    clientsTiles = [
+      {
+        title: 'Личный кабинет для лизинговой компании Т-Лизинг',
+        description: 'Разработка личного кабинета для клиентов лизинговой компании с нуля с интеграцией с внутренним бэк-офисом',
+        img: 1,
+        tags: [
+          { title: 'дизайн', href: '#' },
+          { title: 'разработка', href: '#' },
+          { title: 'платформа', href: '#' }
+        ]
+      },
+      {
+        title: 'Heat Cloud',
+        description: 'Heatcloud — проект по разработке программного комплекса по удаленному управлению отопительными котлами и другими устройствами',
+        img: 2,
+        tags: [
+          { title: 'разработка', href: '#' },
+          { title: 'платформа', href: '#' }
+        ]
+      },
+      {
+        title: 'Видеосчётчик',
+        description: 'Проект по анализу товаров на наличии брака с внедрением компьютерного зрения и камер высокого разрешения',
+        img: 3,
+        tags: [
+          { title: 'дизайн', href: '#' },
+          { title: 'разработка', href: '#' },
+          { title: 'интеграция', href: '#' }
+        ]
+      },
+      {
+        title: 'Световая отбраковка',
+        description: 'Световая отбраковка — учет товаров и брака на предприятии с помощью компьютерного зрения',
+        img: 4,
+        tags: [
+          { title: 'веб-сайт', href: '#' },
+          { title: 'разработка', href: '#' },
+          { title: 'маркетинг', href: '#' }
+        ]
+      },
+      {
+        title: 'Личный кабинет для лизинговой компании Т-Лизинг',
+        description: 'Разработка личного кабинета для клиентов лизинговой компании с нуля с интеграцией с внутренним бэк-офисом',
+        img: 1,
+        tags: [
+          { title: 'дизайн', href: '#' },
+          { title: 'разработка', href: '#' },
+          { title: 'платформа', href: '#' }
+        ]
+      },
+      {
+        title: 'Heat Cloud',
+        description: 'Heatcloud — проект по разработке программного комплекса по удаленному управлению отопительными котлами и другими устройствами',
+        img: 2,
+        tags: [
+          { title: 'разработка', href: '#' },
+          { title: 'платформа', href: '#' }
+        ]
+      },
+      {
+        title: 'Видеосчётчик',
+        description: 'Проект по анализу товаров на наличии брака с внедрением компьютерного зрения и камер высокого разрешения',
+        img: 3,
+        tags: [
+          { title: 'дизайн', href: '#' },
+          { title: 'разработка', href: '#' },
+          { title: 'интеграция', href: '#' }
+        ]
+      },
+      {
+        title: 'Световая отбраковка',
+        description: 'Световая отбраковка — учет товаров и брака на предприятии с помощью компьютерного зрения',
+        img: 4,
+        tags: [
+          { title: 'веб-сайт', href: '#' },
+          { title: 'разработка', href: '#' },
+          { title: 'маркетинг', href: '#' }
+        ]
+      }
+    ]
+  -
+    breadcrumbs = [
+      {
+        title: 'Кейсы'
+      }
+    ]
+  -
+    casesTags = [
+      {title: 'Все'},
+      {title: 'Автосервис'},
+      {title: 'Гостиницы'},
+      {title: 'Коллекции'},
+      {title: 'Медицина', active: true},
+      {title: 'Платформы'},
+      {title: 'Производство'},
+      {title: 'Ресторанный бизнес'},
+      {title: 'Туризм'}
+    ]
+
+block content
+  .main
+    .container
+      .main__header
+        +breadcrumbs(breadcrumbs)
+        h1.main__title Кейсы
+    +tags(casesTags)
+    .container
+      .main__body
+        .cases
+          each tile in clientsTiles
+            +client-tile(tile)
+        +pagination

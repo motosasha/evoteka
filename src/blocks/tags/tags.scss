@@ -1,0 +1,63 @@
+.tags {
+  $block-name: &; // #{$block-name}__element
+
+  width: 100vw;
+  height: 50px;
+  overflow: hidden;
+  cursor: grab;
+
+  @media screen and (min-width: $screen-tl) {
+    height: 75px;
+  }
+
+  &__scroll {
+    height: 150px;
+    overflow: hidden;
+    overflow-x: auto;
+  }
+
+  &__row {
+    display: flex;
+    gap: 10px;
+
+    &::after,
+    &::before {
+      flex: 1 0 auto;
+      width: 5px;
+      content: "";
+
+      @media screen and (min-width: $screen-t) {
+        width: 20px;
+      }
+
+      @media screen and (min-width: $screen-d) {
+        width: 45px;
+      }
+    }
+  }
+
+  &__link {
+    @include tag;
+
+    padding: 5px 20px;
+    color: inherit;
+    white-space: nowrap;
+    text-align: center;
+    text-decoration: none;
+    background: var(--back-primary);
+    border: 1px solid transparent;
+    border-radius: 20px;
+    box-shadow: 0 10px 10px 0 rgba(132 6 98 / 15%);
+    transition: box-shadow 0.25s ease;
+
+    &--active {
+      background: linear-gradient(white, white) padding-box, var(--text-gradient-default) border-box;
+      border: 1px solid transparent;
+      cursor: default;
+    }
+
+    &[href]:hover {
+      box-shadow: 0 10px 15px 0 rgba(132 6 98 / 25%);
+    }
+  }
+}

@@ -1,16 +1,30 @@
 .form {
   $block-name: &; // #{$block-name}__element
 
-  display: grid;
-  gap: 24px;
-
-  &__body {
+  &__grid {
     display: grid;
-    gap: 16px;
+    gap: 10px;
+
+    @media screen and (min-width: $screen-tl) {
+      gap: 20px;
+    }
   }
 
-  &__footer {
-    display: grid;
-    gap: 16px;
+  &__small {
+    @include form-small;
+
+    margin-top: 30px;
+
+    a {
+      font-weight: 700;
+    }
+  }
+
+  &__submit {
+    margin-top: 25px;
+
+    @media screen and (min-width: $screen-tl) {
+      width: 200px;
+    }
   }
 }

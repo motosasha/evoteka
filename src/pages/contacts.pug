@@ -1,0 +1,46 @@
+extends ../templates/layout_default.pug
+
+block variables
+  - isMainPage = false
+  - pageTitle = 'Эвотека | Контакты'
+  - metaDescription = 'description'
+  - metaKeywords = 'keywords'
+  -
+    breadcrumbs = [
+      {
+        title: 'Контакты'
+      }
+    ]
+
+block content
+  .main
+    .container
+      .main__header
+        +breadcrumbs(breadcrumbs)
+        h1.main__title Контакты
+      .main__body
+        .contacts
+          .contacts__row
+            .contacts__item
+              .contacts__label Телефон:
+              a.contacts__link(href='tel:89872607722') +7 (987) 260-77-22
+            .contacts__item
+              .contacts__label Почта:
+              a.contacts__link(href='mailto:info@evoteka.ru') info@evoteka.ru
+            .contacts__item
+              .contacts__label Адрес:
+              .contacts__descr Респ. Татарстан, г. Казань, ул. Спартаковская 2, «IT-Park Имени Башира Рамеева», 2 этаж, оф. 210
+          .contacts__map
+            script(type='text/javascript', charset='utf-8', async='', src='https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A35041b1ea8965b3362130e776db6cd14db687c09aaa1e848b2596fb46ceb95b4&width=100%25&height=100%&lang=ru_RU&scroll=false')
+
+          form.contacts__form
+            .contacts__form-grid
+              .contacts__col
+                +field('text', '', 'Введите имя', '', '', 'contacts-name')(required)
+                +field('text', '', 'Email или телефон', '', '', 'contacts-contact')(required)
+              .contacts__col
+                +field('textarea', '', 'Сообщение', '', 'contacts-message')(required)
+            .contacts__form-row
+              button.button.button--primary(disabled)
+                .button__title Отправить
+              .contacts__form-small Нажимая кнопку «Отправить» вы соглашаетесь с #[a.link(href='#') правилами пользовательского соглашения] и #[a.link(href='#') политикой конфиденциальности]

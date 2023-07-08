@@ -1,0 +1,28 @@
+//- Все примеси в этом файле должны начинаться c имени блока (review-tile)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin review-tile(info, mods)
+
+  //- Принимает:
+  //-   info    {string} - контент
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +review-tile('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' review-tile--' + modsList[i].trim();
+      }
+    }
+
+  .review-tile(class=allMods)&attributes(attributes)
+    img.review-tile__logo(src= src.assets + 'img__review-logo--' + info.logo + '.jpg', alt='')
+    .review-tile__text!= info.text
+    .review-tile__info
+      .review-tile__name!= info.name
+      .review-tile__place!= info.place

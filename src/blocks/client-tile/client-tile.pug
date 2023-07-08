@@ -1,0 +1,32 @@
+//- Все примеси в этом файле должны начинаться c имени блока (client-tile)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin client-tile(info, mods)
+
+  //- Принимает:
+  //-   info    {string} - контент
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +client-tile('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' client-tile--' + modsList[i].trim();
+      }
+    }
+
+  .client-tile(class=allMods)&attributes(attributes)
+    .client-tile__top
+      .client-tile__tags
+        each tag in info.tags
+          a.client-tile__tag(href= tag.href)!= tag.title
+      img.client-tile__image(src= src.assets + 'img__case-tile--0' + info.img + '.jpg', alt= info.title)
+    a.client-tile__inner(href='./case.html')
+      h3.client-tile__title!= info.title
+      p.client-tile__descr!= info.description
+      .client-tile__link Подробнее

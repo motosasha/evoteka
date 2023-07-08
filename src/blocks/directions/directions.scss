@@ -1,0 +1,107 @@
+.directions {
+  $block-name: &; // #{$block-name}__element
+
+  &__wrap {
+    height: 420px;
+    margin: -10px -15px -50px;
+    overflow: hidden;
+
+    @media screen and (min-width: $screen-t) {
+      margin: -10px -30px -50px;
+    }
+
+    @media screen and (min-width: $screen-d) {
+      height: auto;
+      margin: 0;
+      overflow: visible;
+    }
+  }
+
+  &__scroll {
+    display: flex;
+    width: 100vw;
+    overflow: hidden;
+    overflow-x: auto;
+
+    @media screen and (min-width: $screen-d) {
+      width: 100%;
+      overflow: visible;
+    }
+
+    &::before,
+    &::after {
+      display: block;
+      flex: 1 0 auto;
+      width: 15px;
+      content: "";
+
+      @media screen and (min-width: $screen-t) {
+        width: 30px;
+      }
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(8, 280px);
+    gap: 15px;
+    align-items: start;
+    padding: 10px 0 70px;
+
+    @media screen and (min-width: $screen-t) {
+      grid-template-columns: repeat(8, 260px);
+    }
+
+    @media screen and (min-width: $screen-ti) {
+      grid-template-columns: repeat(8, 345px);
+    }
+
+    @media screen and (min-width: $screen-ti) {
+      grid-template-columns: repeat(8, 310px);
+    }
+
+    @media screen and (min-width: $screen-d) {
+      grid-template-columns: repeat(4, 1fr);
+      padding: 0;
+    }
+  }
+
+  &__tile {
+    display: grid;
+    gap: 20px;
+    justify-items: center;
+    padding: 20px;
+    color: inherit;
+    text-decoration: none;
+    border: none;
+    border-radius: 15px;
+    box-shadow: var(--button-shadow);
+    cursor: pointer;
+    transition: box-shadow 0.25s ease;
+    appearance: none;
+
+    @media screen and (min-width: $screen-d) {
+      height: 100%;
+      padding: 30px;
+    }
+
+    &:hover {
+      box-shadow: var(--button-shadow-hover);
+    }
+
+    svg {
+      display: block;
+      width: 100%;
+      max-width: 240px;
+      height: auto;
+      aspect-ratio: 24 / 10;
+      opacity: 0;
+    }
+  }
+
+  &__title {
+    @include direction-title;
+
+    text-align: center;
+  }
+}

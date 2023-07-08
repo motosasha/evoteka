@@ -1,0 +1,79 @@
+//- Все примеси в этом файле должны начинаться c имени блока (popup)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin popup(data, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +popup('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' popup--' + modsList[i].trim();
+      }
+    }
+
+  .hystmodal#popup(class=allMods, aria-hidden='true')&attributes(attributes)
+    .hystmodal__wrap
+      .hystmodal__window.popup(role='dialog', aria-modal='true')
+        .popup__inner
+          button.hystmodal__close.popup__close(data-hystclose='', title='')
+            svg.popup__icon
+              use(href='img/svgSprite.svg#icon__cross')
+          .popup__grid
+            .popup__quote
+              img.popup__image(src= src.assets + 'img__popup.jpg', alt='Исрафилов Камиль Халилевич')
+              .popup__text «Мы гордимся тем, что разрабатываем уникальные решения для потребностей каждого из наших партнёров»
+              .popup__cite Генеральный директор «Эвотека»<br>Исрафилов Камиль Халилевич
+            .popup__form
+              header.popup__header
+                h2.popup__heading Форма для связи
+                p.popup__descr Заполните форму и мы свяжемся с вами в ближайшее время
+              form.form#registration-form(name='registration-form')
+                .form__grid
+                  +field('text', '', 'Введите имя', '', '', 'user-name')(required)
+                  +field('text', '', 'Email или телефон', '', '', 'user-contact')(required)
+                  +select(['Выберите должность', 'Директор в компании', 'Маркетолог', 'Продукт менеджер', 'Менеджер по продажам', 'Фрилансер', 'Другое'], '', 'user-place')
+                  +select(
+                    ['Выберите категорию бизнеса',
+                    'Недвижимость',
+                    'Туризм',
+                    'Финансы',
+                    'Спорт и активный отдых',
+                    'Кафе и рестораны',
+                    'Дети',
+                    'Бытовая техника и электроника',
+                    'Авто',
+                    'Красота и забота о себе',
+                    'Досуг и развлечения',
+                    'Образование',
+                    'Мода и стиль',
+                    'Товары и услуги для бизнеса',
+                    'Здоровье',
+                    'Продукты и товары',
+                    'Дом и ремонт'], '', 'user-category')
+                  button.button.button--primary.form__submit(disabled)
+                    .button__title Отправить
+                .form__small Нажимая кнопку «Отправить» вы соглашаетесь с #[a.link(href='#') правилами пользовательского соглашения] и #[a.link(href='#') политикой конфиденциальности]
+
+mixin popup-thanks(data)
+  .hystmodal#popup-thanks(aria-hidden='true')
+    .hystmodal__wrap
+      .hystmodal__window.popup.popup--thanks(role='dialog', aria-modal='true')
+        .popup__inner
+          button.hystmodal__close.popup__close(data-hystclose='', title='')
+            svg.popup__icon
+              use(href='img/svgSprite.svg#icon__cross')
+          .popup__center
+            header.popup__header
+              h2.popup__heading Заявка принята
+              p.popup__descr Мы свяжемся с вами в ближайшее время
+            button.button.button--primary(data-hystclose='')
+              .button__title Отлично

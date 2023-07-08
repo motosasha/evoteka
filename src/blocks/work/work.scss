@@ -1,0 +1,55 @@
+.work {
+  $block-name: &; // #{$block-name}__element
+
+  &__grid {
+    display: grid;
+    gap: 30px;
+
+    @media screen and (min-width: $screen-t) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (min-width: $screen-tl) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__tile {
+    display: grid;
+    gap: 15px;
+    justify-items: center;
+
+    @media screen and (min-width: $screen-tl) {
+      padding: 30px 0;
+    }
+
+    svg {
+      display: block;
+      width: 100%;
+      max-width: 200px;
+      height: auto;
+      opacity: 0;
+    }
+  }
+
+  &__title {
+    @include work-title;
+
+    text-align: center;
+  }
+
+  &__list {
+    display: grid;
+    gap: 5px;
+    max-width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__line {
+    @include work-list;
+
+    text-align: center;
+  }
+}

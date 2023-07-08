@@ -1,0 +1,64 @@
+@import "../../scss/mixins/text-styles";
+
+.section {
+  $block-name: &; // #{$block-name}__element
+
+  &__inner {
+    width: 100%;
+    padding: 100px 0 50px;
+
+    @media screen and (min-width: $screen-tl) {
+      padding: 150px 0 100px;
+    }
+  }
+
+  .main + & &__inner { // stylelint-disable-line
+    width: 100%;
+    padding: 50px 0;
+
+    @media screen and (min-width: $screen-tl) {
+      padding: 50px 0 100px;
+    }
+  }
+
+  &__header {
+    display: grid;
+    gap: 5px;
+    margin-bottom: 20px;
+
+    @media screen and (min-width: $screen-tl) {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__heading {
+    @include section-title;
+
+    margin: 0;
+    padding-bottom: 5px;
+    text-align: center;
+    background-color: inherit;
+    background-image: var(--text-gradient-default);
+    background-position: 0 0;
+    background-size: 100% 100%;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__descr {
+    @include section-descr;
+
+    margin: 0;
+    text-align: center;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+
+    @media screen and (min-width: $screen-tl) {
+      margin-top: 50px;
+    }
+  }
+}
