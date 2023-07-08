@@ -194,6 +194,12 @@ window.addEventListener('resize', () => {
                   <div class="case__grid-item"><img src="./assets/img__case--03.jpg" alt=""></div>
                 </div>
               </div>
+              <div class="case__footer">
+                <div class="case__footer-title">Хочешь так же?</div>
+                <div class="case__footer-descr">Оставь заявку и мы обсудим подробности проекта</div><button class="button button--primary case__footer-button" data-hystmodal="#popup">
+                  <div class="button__title">Оставить заявку</div>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -229,6 +235,85 @@ window.addEventListener('resize', () => {
           </div>
         </div>
       </section>
+      <div class="hystmodal" id="popup" aria-hidden="true">
+        <div class="hystmodal__wrap">
+          <div class="hystmodal__window popup" role="dialog" aria-modal="true">
+            <div class="popup__inner"><button class="hystmodal__close popup__close" data-hystclose="" title=""><svg class="popup__icon">
+                  <use href="img/svgSprite.svg#icon__cross"></use>
+                </svg></button>
+              <div class="popup__grid">
+                <div class="popup__quote"><img class="popup__image" src="./assets/img__popup.jpg" alt="Исрафилов Камиль Халилевич" />
+                  <div class="popup__text">«Мы гордимся тем, что разрабатываем уникальные решения для потребностей каждого из наших партнёров»</div>
+                  <div class="popup__cite">Генеральный директор «Эвотека»<br>Исрафилов Камиль Халилевич</div>
+                </div>
+                <div class="popup__form">
+                  <header class="popup__header">
+                    <h2 class="popup__heading">Форма для связи</h2>
+                    <p class="popup__descr">Заполните форму и мы свяжемся с вами в ближайшее время</p>
+                  </header>
+                  <form class="form" id="registration-form" name="registration-form">
+                    <div class="form__grid">
+                      <div class="field"><label class="field__inner"><input class="input field__input" id="" type="text" placeholder="Введите имя" name="user-name" required="required" /></label>
+                        <div class="field__message">Текст ошибки</div>
+                      </div>
+                      <div class="field"><label class="field__inner"><input class="input field__input" id="" type="text" placeholder="Email или телефон" name="user-contact" required="required" /></label>
+                        <div class="field__message">Текст ошибки</div>
+                      </div><select class="select" name="user-place">
+                        <option value="Выберите должность">Выберите должность</option>
+                        <option value="Директор в компании">Директор в компании</option>
+                        <option value="Маркетолог">Маркетолог</option>
+                        <option value="Продукт менеджер">Продукт менеджер</option>
+                        <option value="Менеджер по продажам">Менеджер по продажам</option>
+                        <option value="Фрилансер">Фрилансер</option>
+                        <option value="Другое">Другое</option>
+                      </select><select class="select" name="user-category">
+                        <option value="Выберите категорию бизнеса">Выберите категорию бизнеса</option>
+                        <option value="Недвижимость">Недвижимость</option>
+                        <option value="Туризм">Туризм</option>
+                        <option value="Финансы">Финансы</option>
+                        <option value="Спорт и активный отдых">Спорт и активный отдых</option>
+                        <option value="Кафе и рестораны">Кафе и рестораны</option>
+                        <option value="Дети">Дети</option>
+                        <option value="Бытовая техника и электроника">Бытовая техника и электроника</option>
+                        <option value="Авто">Авто</option>
+                        <option value="Красота и забота о себе">Красота и забота о себе</option>
+                        <option value="Досуг и развлечения">Досуг и развлечения</option>
+                        <option value="Образование">Образование</option>
+                        <option value="Мода и стиль">Мода и стиль</option>
+                        <option value="Товары и услуги для бизнеса">Товары и услуги для бизнеса</option>
+                        <option value="Здоровье">Здоровье</option>
+                        <option value="Продукты и товары">Продукты и товары</option>
+                        <option value="Дом и ремонт">Дом и ремонт</option>
+                      </select><button class="button button--primary form__submit" disabled="disabled">
+                        <div class="button__title">Отправить</div>
+                      </button>
+                    </div>
+                    <div class="form__small">Нажимая кнопку «Отправить» вы соглашаетесь с <a class="link" href="#">правилами пользовательского соглашения</a> и <a class="link" href="#">политикой конфиденциальности</a></div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hystmodal" id="popup-thanks" aria-hidden="true">
+        <div class="hystmodal__wrap">
+          <div class="hystmodal__window popup popup--thanks" role="dialog" aria-modal="true">
+            <div class="popup__inner"><button class="hystmodal__close popup__close" data-hystclose="" title=""><svg class="popup__icon">
+                  <use href="img/svgSprite.svg#icon__cross"></use>
+                </svg></button>
+              <div class="popup__center">
+                <header class="popup__header">
+                  <h2 class="popup__heading">Заявка принята</h2>
+                  <p class="popup__descr">Мы свяжемся с вами в ближайшее время</p>
+                </header><button class="button button--primary" data-hystclose="">
+                  <div class="button__title">Отлично</div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="page__footer">
       <footer class="footer">
