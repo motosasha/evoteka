@@ -21,10 +21,10 @@
   <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
   <link rel="manifest" href="./img/favicon/site.webmanifest">
   <link rel="mask-icon" href="./img/favicon/safari-pinned-tab.svg" color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#5bbad5">
-  <meta name="theme-color" content="#000">
-  <meta name="msapplication-navbutton-color" content="#000">
-  <meta name="apple-mobile-web-app-status-bar-style" content="#000">
+  <meta name="apple-mobile-web-app-title" content="Evoteka">
+  <meta name="application-name" content="Evoteka">
+  <meta name="msapplication-TileColor" content="#9f00a7">
+  <meta name="theme-color" content="#ffffff">
   <title>Эвотека | Контакты</title>
   <meta name="description" content="description">
   <meta name="keywords" content="keywords">
@@ -81,7 +81,57 @@ window.addEventListener('resize', () => {
       </header>
     </div>
     <div class="page__main">
-      <div>contacts</div>
+      <div class="main">
+        <div class="container">
+          <div class="main__header">
+            <ul class="breadcrumbs">
+              <li class="breadcrumbs__item"><a class="breadcrumbs__link link" href="/">Главная</a></li>
+              <li class="breadcrumbs__item"><span class="breadcrumbs__span">Контакты</span></li>
+            </ul>
+            <h1 class="main__title">Контакты</h1>
+          </div>
+          <div class="main__body">
+            <div class="contacts">
+              <div class="contacts__row">
+                <div class="contacts__item">
+                  <div class="contacts__label">Телефон:</div><a class="contacts__link" href="tel:89872607722">+7 (987) 260-77-22</a>
+                </div>
+                <div class="contacts__item">
+                  <div class="contacts__label">Почта:</div><a class="contacts__link" href="mailto:info@evoteka.ru">info@evoteka.ru</a>
+                </div>
+                <div class="contacts__item">
+                  <div class="contacts__label">Адрес:</div>
+                  <div class="contacts__descr">Респ. Татарстан, г. Казань, ул. Спартаковская 2, «IT-Park Имени Башира Рамеева», 2 этаж, оф. 210</div>
+                </div>
+              </div>
+              <div class="contacts__map"><script type="text/javascript" charset="utf-8" async="" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A35041b1ea8965b3362130e776db6cd14db687c09aaa1e848b2596fb46ceb95b4&amp;width=100%25&amp;height=100%&amp;lang=ru_RU&amp;scroll=false"></script>
+              </div>
+              <form class="contacts__form">
+                <div class="contacts__form-grid">
+                  <div class="contacts__col">
+                    <div class="field"><label class="field__inner"><input class="input field__input" id="" type="text" placeholder="Введите имя" name="contacts-name" required="required" /></label>
+                      <div class="field__message">Текст ошибки</div>
+                    </div>
+                    <div class="field"><label class="field__inner"><input class="input field__input" id="" type="text" placeholder="Email или телефон" name="contacts-contact" required="required" /></label>
+                      <div class="field__message">Текст ошибки</div>
+                    </div>
+                  </div>
+                  <div class="contacts__col">
+                    <div class="field"><label class="field__inner"><textarea class="textarea field__textarea" placeholder="Сообщение" name="contacts-message" required="required"></textarea></label>
+                      <div class="field__message">Текст ошибки</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="contacts__form-row"><button class="button button--primary" disabled>
+                    <div class="button__title">Отправить</div>
+                  </button>
+                  <div class="contacts__form-small">Нажимая кнопку «Отправить» вы соглашаетесь с <a class="link" href="#">правилами пользовательского соглашения</a> и <a class="link" href="#">политикой конфиденциальности</a></div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="page__footer">
       <footer class="footer">
