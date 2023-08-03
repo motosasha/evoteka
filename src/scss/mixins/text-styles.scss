@@ -371,13 +371,13 @@
 @mixin main-title {
   font-weight: 500;
   font-size: 25px;
-  line-height: 1;
+  line-height: 1.2;
   letter-spacing: -0.25px;
 
   @media screen and (min-width: $screen-tl) {
     font-weight: 500;
     font-size: 55px;
-    line-height: 1;
+    line-height: 1.2;
     letter-spacing: -0.55px;
   }
 }
